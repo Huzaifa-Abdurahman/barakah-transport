@@ -27,18 +27,59 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Barakah Transport Service | VIP Umrah & Hajj Taxi Saudi Arabia",
-  description:
-    "Saudi Arabia's premier VIP Umrah & Hajj taxi company. Comfortable transportation between Makkah, Madina, Jeddah Airport, and all major holy sites. Book your ride today.",
-  keywords: "Umrah taxi, Hajj transport, Makkah Madina taxi, Saudi Arabia VIP cab, airport transfer Saudi",
+  metadataBase: new URL("https://barakahtransportservice.com"),
+  title: {
+    default: "Barakah Transport Service | VIP Umrah & Hajj Taxi Saudi Arabia",
+    template: "%s | Barakah Transport Service"
+  },
+  description: "Saudi Arabia's premier VIP Umrah & Hajj taxi company. Exceptional 5.0 rated transportation between Makkah, Madinah, Jeddah Airport, and all major holy Ziyarats.",
+  keywords: ["VIP Umrah taxi", "Hajj transport", "Makkah Madina taxi", "Saudi Arabia VIP cab", "Jeddah airport transfer", "Ziyarat tours", "Barakah Transport Service", "premium taxi Makkah"],
+  authors: [{ name: "Barakah Transport Service" }],
+  creator: "Abdullah Khan",
+  publisher: "Barakah Transport Service",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Barakah Transport Service",
-    description: "VIP Umrah & Hajj Taxi — Makkah · Madina · Jeddah · Airports",
     type: "website",
     locale: "en_US",
+    url: "https://barakahtransportservice.com",
+    title: "Barakah Transport Service | Elite VIP Transport",
+    description: "Premium VIP Umrah & Hajj Taxi serving Makkah, Madinah, and Jeddah. Over 2,500+ happy passengers served flawlessly.",
+    siteName: "Barakah Transport Service",
+    images: [
+      {
+        url: "/icon.png",
+        width: 1200,
+        height: 630,
+        alt: "Barakah Transport Service Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Barakah Transport Service | VIP Umrah Taxi",
+    description: "Experience 5-star VIP transportation across Saudi Arabia's Holiest Cities.",
+    images: ["/icon.png"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 

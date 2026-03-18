@@ -122,11 +122,16 @@ export default function BookingForm() {
             <div className="relative shadow-sm rounded-xl">
               <select name="vehicle" value={formData.vehicle} onChange={handleChange} className="w-full p-5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-[var(--yellow-main)] transition-all font-bold text-[15px] appearance-none cursor-pointer">
                 <option disabled>Select Vehicle</option>
-                <option>HiAce 10 Seater</option>
-                <option>Staria 7 Seater</option>
-                <option>Camry 4 Seater</option>
-                <option>GMC / Tahoe 7 Seater</option>
-                <option>Coaster Bus 30 Seater</option>
+                <option>Toyota Camry (4 Seater)</option>
+                <option>Hyundai Sonata (4 Seater)</option>
+                <option>Mercedes Sedan VIP (4 Seater)</option>
+                <option>Hyundai Staria VIP (7 Seater)</option>
+                <option>Hyundai Starex (9 Seater)</option>
+                <option>Hyundai H1 (7 Seater)</option>
+                <option>GMC Yukon XL / Tahoe (7 Seater)</option>
+                <option>Mercedes V-Class (7 Seater)</option>
+                <option>Toyota HiAce (10 Seater)</option>
+                <option>Large Coaster Bus (30 Seater)</option>
               </select>
               <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
                 ▼

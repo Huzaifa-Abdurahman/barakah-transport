@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
+
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -57,9 +57,9 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="flex items-center gap-4 border-l border-black/10 pl-10">
-               <Button className="bg-[var(--yellow-main)] text-black hover:bg-black hover:text-white font-black text-xs tracking-widest uppercase px-8 rounded-xl">
-                 <Link href="#services">BOOK NOW</Link>
-               </Button>
+               <Link href="/contact#booking" className="inline-flex items-center justify-center h-10 px-8 rounded-xl bg-[var(--yellow-main)] text-black hover:bg-black hover:text-white font-black text-xs tracking-widest uppercase transition-colors">
+                 BOOK NOW
+               </Link>
             </div>
           </div>
 

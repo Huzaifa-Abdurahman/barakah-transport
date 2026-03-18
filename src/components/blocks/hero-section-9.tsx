@@ -90,7 +90,7 @@ export const HeroSection = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 28 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+                        transition={{ duration: 0.75, ease: "easeOut" }}
                         className="flex flex-col items-start text-left"
                     >
                         {/* Label */}
@@ -211,7 +211,7 @@ export const HeroSection = () => {
                                 initial={{ opacity: 0, scale: 0.93, x: 30 }}
                                 animate={{ opacity: 1, scale: 1, x: 0 }}
                                 exit={{ opacity: 0, scale: 0.93, x: -20 }}
-                                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                                transition={{ duration: 0.55, ease: "easeOut" }}
                                 className="relative w-full max-w-[580px] flex flex-col items-center"
                             >
                                 {/* Gold glow behind car */}

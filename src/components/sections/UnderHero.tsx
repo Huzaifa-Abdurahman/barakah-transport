@@ -146,7 +146,7 @@ export default function UnderHero() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="flex flex-col gap-10"
           >
             <div>
@@ -218,7 +218,7 @@ export default function UnderHero() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
             className="grid grid-cols-1 sm:grid-cols-2 gap-5"
           >
             {!isInView
@@ -228,7 +228,7 @@ export default function UnderHero() {
                   key={i}
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.4 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.6, delay: 0.4 + i * 0.12, ease: "easeOut" }}
                   whileHover={{ scale: 1.03, y: -6, transition: { duration: 0.3 } }}
                   className="group relative overflow-hidden rounded-[2rem] bg-[#050505] border border-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-[var(--yellow-main)]/30 transition-all duration-400 w-full"
                 >
