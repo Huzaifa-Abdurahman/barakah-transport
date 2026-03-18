@@ -1,26 +1,39 @@
 @import "tailwindcss";
+@source "../components";
+@source "../app";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --yellow-main: #FFCC00;
+  
+  /* Fonts mapped to tailwind config */
+  --font-heading: var(--font-cinzel), serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-accent: var(--font-cinzel), serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-gold-500: var(--yellow-main);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
+  --font-accent: var(--font-accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Keep only bare minimum system resets */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  color: #000000;
 }
+
+/* Minimal utility for scrollbars if desired */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--yellow-main); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #e6b800; }
