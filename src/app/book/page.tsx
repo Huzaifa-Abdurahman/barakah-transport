@@ -7,7 +7,7 @@ import BookingForm from "@/components/sections/BookingForm";
 export const metadata: Metadata = {
   title: "Book Your Ride | Barakah Transport Service",
   description:
-    "Book a VIP Umrah or Hajj taxi in Saudi Arabia. Airport transfers, intercity travel, hotel pickups, and Ziyarat tours across Makkah, Madina, and Jeddah.",
+    "Book a Premium Umrah or Hajj taxi in Saudi Arabia. Airport transfers, intercity travel, hotel pickups, and Ziyarat tours across Makkah, Madina, and Jeddah.",
 };
 
 export default function BookPage() {

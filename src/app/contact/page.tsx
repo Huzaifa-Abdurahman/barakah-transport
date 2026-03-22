@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, MessageCircle, Instagram, Facebook } from "lucide-
 
 export const metadata: Metadata = {
   title: "Contact Us | Barakah Transport Service",
-  description: "Get in touch with Barakah Transport Service for VIP Umrah and Hajj taxi bookings. We are available 24/7.",
+  description: "Get in touch with Barakah Transport Service for Premium Umrah and Hajj taxi bookings. We are available 24/7.",
 };
 
 const contactCards = [

@@ -7,17 +7,17 @@ import BookingForm from "@/components/sections/BookingForm";
 export const metadata: Metadata = {
   title: "Our Vehicles | Barakah Transport Service",
   description:
-    "Browse our comprehensive premium fleet of 9 vehicles. All air-conditioned, sanitized, and fully serviced for your sacred journey.",
+    "Browse our comprehensive premium fleet of 9 vehicles. All air-conditioned, sanitized, and fully serviced for your **Blessed Journey**.",
 };
 
 const allVehicles = [
-  { name: "STARIA VIP", image: "/hero/staria.png", seats: 7, luggage: 7 },
-  { name: "STAREX", image: "/hero/starex.png", seats: 9, luggage: 9 },
-  { name: "HYUNDAI H1", image: "/hero/h1.png", seats: 7, luggage: 8 },
+  { name: "STARIA", image: "/hero/staria.png", seats: 11, luggage: 7 },
+  { name: "STAREX", image: "/hero/starex.png", seats: "11-12", luggage: 9 },
+  { name: "HYUNDAI H1", image: "/hero/h1.png", seats: "8-12", luggage: 8 },
   { name: "GMC YUKON XL", image: "/hero/gmc.png", seats: 7, luggage: 7 },
   { name: "TOYOTA CAMRY", image: "/hero/camry.png", seats: 4, luggage: 3 },
   { name: "HYUNDAI SONATA", image: "/hero/sonata.png", seats: 4, luggage: 3 },
-  { name: "TOYOTA HIACE", image: "/hero/hiace.png", seats: 10, luggage: 10 },
+  { name: "TOYOTA HIACE", image: "/hero/hiace.png", seats: 17, luggage: 17 },
   { name: "MERCEDES SEDAN", image: "/hero/mercedez-car.png", seats: 4, luggage: 3 },
   { name: "MERCEDES V-CLASS", image: "/hero/mercedez.png", seats: 7, luggage: 7 },
 ];
@@ -37,7 +37,7 @@ export default function FleetPage() {
             Available Umrah Vehicles
           </h1>
           <p className="text-slate-500 max-w-2xl mx-auto font-medium">
-            Explore our vast selection of premium, sanitized vehicles perfectly sized for individuals, families, and larger groups making their sacred journey.
+            Explore our vast selection of premium, sanitized vehicles perfectly sized for individuals, families, and larger groups making their **Blessed Journey**.
           </p>
         </section>
 

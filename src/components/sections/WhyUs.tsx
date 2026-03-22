@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, Phone, Star, Check } from "lucide-react";
+import { MessageCircle, Phone, Star, Check, ShieldCheck, Car } from "lucide-react";
 
 export default function WhyUs() {
   const contactInfo = {
@@ -21,37 +21,57 @@ export default function WhyUs() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative w-full max-w-md lg:max-w-full rounded-[2rem] bg-gradient-to-tr from-slate-900 to-black p-8 md:p-12 border border-slate-800 shadow-2xl flex flex-col items-center"
+              className="relative w-full max-w-md lg:max-w-full rounded-[1.5rem] bg-[#0A0A0A] p-6 md:p-10 border border-white/10 shadow-lg flex flex-col items-center"
             >
-               {/* Internal Glow */}
-               <div className="absolute inset-0 bg-[var(--yellow-main)] bg-opacity-5 blur-3xl rounded-[2rem] pointer-events-none" />
+               {/* Extremely Subtle Internal Glow */}
+               <div className="absolute inset-0 bg-[var(--yellow-main)] opacity-[0.03] blur-2xl rounded-[1.5rem] pointer-events-none" />
                
                {/* Clean Image */}
                <img 
                  src="/i2.JPG" 
-                 alt="Premium VIP Transport" 
-                 className="relative z-10 w-full h-[300px] object-cover rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5 mb-8 hover:scale-[1.03] transition-transform duration-500" 
+                 alt="Premium Transport" 
+                 className="relative z-10 w-full h-[240px] md:h-[280px] object-cover rounded-2xl overflow-hidden shadow-md border border-white/5 mb-6 hover:scale-[1.02] transition-transform duration-500 bg-white" 
                />
                
                {/* Normal Flow Grid of Badges Instead of Absolute Position */}
-               <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10 mt-auto">
-                  <div className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
-                     <div className="w-12 h-12 rounded-full bg-[var(--yellow-main)]/20 flex flex-shrink-0 items-center justify-center text-[var(--yellow-main)]">
-                       <Star size={24} fill="currentColor" />
+               <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3 relative z-10 mt-auto">
+                  <div className="bg-white/[0.03] border border-white/10 rounded-xl p-3 flex items-center gap-3">
+                     <div className="w-10 h-10 rounded-full bg-[var(--yellow-main)]/10 flex flex-shrink-0 items-center justify-center text-[var(--yellow-main)]">
+                       <Star size={20} fill="currentColor" />
                      </div>
                      <div className="text-left">
-                        <div className="text-xl md:text-2xl font-bold text-white leading-none mb-1">100%</div>
-                        <div className="text-sm font-medium text-slate-400 leading-tight">Reliability Role</div>
+                        <div className="text-lg font-bold text-white leading-none mb-1">100%</div>
+                        <div className="text-[11px] font-medium text-slate-400 leading-tight uppercase tracking-wider">Reliability Rate</div>
                      </div>
                   </div>
                   
-                  <div className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
-                     <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex flex-shrink-0 items-center justify-center text-emerald-400">
-                       <Check size={24} className="stroke-[3px]" />
+                  <div className="bg-white/[0.03] border border-white/10 rounded-xl p-3 flex items-center gap-3">
+                     <div className="w-10 h-10 rounded-full bg-slate-800 flex flex-shrink-0 items-center justify-center text-white">
+                       <Check size={20} className="stroke-[3px]" />
                      </div>
                      <div className="text-left">
                         <div className="text-sm font-bold text-white leading-tight">Govt. Approved</div>
-                        <div className="text-xs text-slate-400 mt-1">Certified Fleet</div>
+                        <div className="text-[11px] text-slate-400 mt-1 uppercase tracking-wider">Saudi Arabia</div>
+                     </div>
+                  </div>
+
+                  <div className="bg-white/[0.03] border border-white/10 rounded-xl p-3 flex items-center gap-3">
+                     <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex flex-shrink-0 items-center justify-center text-emerald-400">
+                       <ShieldCheck size={20} className="stroke-[2px]" />
+                     </div>
+                     <div className="text-left">
+                        <div className="text-sm font-bold text-white leading-tight">Nusuk Approved</div>
+                        <div className="text-[11px] text-slate-400 mt-1 uppercase tracking-wider">Official Platform</div>
+                     </div>
+                  </div>
+
+                  <div className="bg-white/[0.03] border border-white/10 rounded-xl p-3 flex items-center gap-3">
+                     <div className="w-10 h-10 rounded-full bg-blue-500/10 flex flex-shrink-0 items-center justify-center text-blue-400">
+                       <Car size={20} className="stroke-[2px]" />
+                     </div>
+                     <div className="text-left">
+                        <div className="text-sm font-bold text-white leading-tight">PTA Approved</div>
+                        <div className="text-[11px] text-slate-400 mt-1 uppercase tracking-wider">Govt Certified Cars</div>
                      </div>
                   </div>
                </div>
@@ -85,7 +105,7 @@ export default function WhyUs() {
                 <Star size={24} className="text-black" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-1">Global Elite Reputation</h3>
+                <h3 className="text-xl font-bold text-white mb-1">Global Premium Reputation</h3>
                 <p className="text-slate-300 text-sm md:text-base">Makkah & Madinah's top-rated, most trusted premium transport service.</p>
               </div>
             </div>
@@ -96,7 +116,7 @@ export default function WhyUs() {
                 "Fluent English Speakers",
                 "24/7 Priority Dispatch",
                 "Spotless Latest Models",
-                "VIP Door-to-Door",
+                "Premium Door-to-Door",
                 "Personalized Ziyarats",
                 "Complete Reliability",
               ].map((item, idx) => (

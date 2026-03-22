@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const items = [
-  "VIP UMRAH TAXI SERVICES",
+  "PREMIUM UMRAH/HAJJ TAXI SERVICES",
   "JEDDAH TO MAKKAH TRANSFERS",
   "MAKKAH TO MADINAH TRANSFERS",
   "24/7 CUSTOMER SUPPORT",

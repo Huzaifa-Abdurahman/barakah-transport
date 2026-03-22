@@ -69,7 +69,7 @@ export const Footer7 = ({
     title: "Barakah Transport Service",
   },
   sections = defaultSections,
-  description = "Saudi Arabia's premier VIP Umrah & Hajj taxi company. Professional and comfortable transportation across the Kingdom.",
+  description = "Saudi Arabia's premier Premium Umrah & Hajj taxi company. Professional and comfortable transportation across the Kingdom.",
   socialLinks = defaultSocialLinks,
   copyright = `© ${new Date().getFullYear()} Barakah Transport Service. All rights reserved.`,
   legalLinks = defaultLegalLinks,

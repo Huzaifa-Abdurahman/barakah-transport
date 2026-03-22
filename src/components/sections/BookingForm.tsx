@@ -47,14 +47,14 @@ export default function BookingForm() {
           Date: formData.date,
           Vehicle: formData.vehicle,
           message: formData.message,
-          _subject: "🚕 New VIP Taxi Booking Request!",
+          _subject: "🚕 New Premium Taxi Booking Request!",
           _autoresponse: "Thank you for choosing Barakah Transport. We have safely received your booking request! Our team will reach out to you shortly via WhatsApp with a confirmation.",
           _template: "table"
         })
       });
 
       // 2. Open WhatsApp directly with all details formatted
-      const waText = `*New VIP Booking Request* 🚖\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Route:* ${formData.pickup} ➡️ ${formData.dropoff}\n*Date:* ${formData.date}\n*Vehicle:* ${formData.vehicle}\n*Notes:* ${formData.message}`;
+      const waText = `*New Premium Booking Request* 🚖\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Route:* ${formData.pickup} ➡️ ${formData.dropoff}\n*Date:* ${formData.date}\n*Vehicle:* ${formData.vehicle}\n*Notes:* ${formData.message}`;
       window.open(`https://wa.me/${contactInfo.rawPhone}?text=${encodeURIComponent(waText)}`, "_blank");
 
       // Reset Form
@@ -88,7 +88,7 @@ export default function BookingForm() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[20]">
         <div className="text-center mb-16 text-white drop-shadow-2xl">
           <span className="text-[var(--yellow-main)] uppercase tracking-[0.4em] font-black text-sm md:text-base border border-[var(--yellow-main)]/50 px-6 py-2 rounded-full mb-6 inline-block bg-black/50 backdrop-blur-md">
-            VIP Reservation
+            Premium Reservation
           </span>
           <h2 className="text-6xl md:text-7xl font-black mt-6 uppercase tracking-tighter drop-shadow-[0_10px_20px_rgba(0,0,0,1)]">
             Book <span className="text-[var(--yellow-main)]">With Us Now</span>
@@ -124,13 +124,13 @@ export default function BookingForm() {
                 <option disabled>Select Vehicle</option>
                 <option>Toyota Camry (4 Seater)</option>
                 <option>Hyundai Sonata (4 Seater)</option>
-                <option>Mercedes Sedan VIP (4 Seater)</option>
-                <option>Hyundai Staria VIP (7 Seater)</option>
-                <option>Hyundai Starex (9 Seater)</option>
-                <option>Hyundai H1 (7 Seater)</option>
+                <option>Mercedes Sedan (4 Seater)</option>
+                <option>Hyundai Staria (11 Seater)</option>
+                <option>Hyundai Starex (11 to 12 Seater)</option>
+                <option>Hyundai H1 (8 to 12 Seater)</option>
                 <option>GMC Yukon XL / Tahoe (7 Seater)</option>
                 <option>Mercedes V-Class (7 Seater)</option>
-                <option>Toyota HiAce (10 Seater)</option>
+                <option>Toyota HiAce (17 Passengers)</option>
                 <option>Large Coaster Bus (30 Seater)</option>
               </select>
               <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">

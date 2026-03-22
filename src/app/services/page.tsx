@@ -5,13 +5,13 @@ import BookingForm from "@/components/sections/BookingForm";
 
 export const metadata: Metadata = {
   title: "Premium Services | Barakah Transport Service",
-  description: "Excellence in Saudi Arabia. From VIP Umrah Taxi services and detailed Ziyarat guidance to professional transport and vehicle consulting for Hajj groups.",
+  description: "Excellence in Saudi Arabia. From Premium Umrah Taxi services and detailed Ziyarat guidance to professional transport and vehicle consulting for Hajj groups.",
 };
 
 const servicesData = [
   {
     icon: <CarFront size={44} className="text-[var(--yellow-main)] drop-shadow-sm" />,
-    title: "VIP Taxi Services (Saudi Arabia)",
+    title: "Premium Taxi Services (Saudi Arabia)",
     description: "Experience the gold standard in private transportation. Whether you are traveling for Umrah, Hajj, or high-end business across Jeddah, Makkah, and Madinah, our late-model luxury cars ensure you arrive completely relaxed.",
   },
   {
@@ -50,20 +50,20 @@ export default function ServicesPage() {
          <div className="absolute inset-0 z-0">
            <img 
              src="/i2.JPG" 
-             alt="Barakah Transport VIP Taxi Services" 
+             alt="Barakah Transport Premium Taxi Services" 
              className="w-full h-full object-cover object-center scale-105" 
            />
            <div className="absolute inset-0 bg-slate-900/75 backdrop-blur-[2px]"></div>
          </div>
          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center mt-8">
             <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-[var(--yellow-main)]/20 border border-[var(--yellow-main)]/30 text-[var(--yellow-main)] font-black text-xs uppercase tracking-[0.3em] mb-6 shadow-lg backdrop-blur-md">
-               Elite Operations
+               Premium Operations
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-black text-white uppercase tracking-tighter leading-[1.1] drop-shadow-2xl">
                Our <span className="text-[var(--yellow-main)]">Services</span>
             </h1>
             <p className="text-slate-300 font-medium text-lg md:text-xl max-w-2xl mt-6 leading-relaxed">
-               More than just a ride. Elite VIP Taxi operations and advanced fleet consulting natively distributed across the Kingdom of Saudi Arabia.
+               More than just a ride. Premium Taxi operations and advanced fleet consulting natively distributed across the Kingdom of Saudi Arabia.
             </p>
          </div>
       </section>
@@ -104,7 +104,7 @@ export default function ServicesPage() {
                  Coordinating travel for a 40-person family or a multinational business delegation isn't simply about booking cars. It requires deep logistical orchestration.
                </p>
                <p className="text-slate-400 font-medium leading-relaxed text-lg mb-6">
-                 Barakah Transport offers bespoke consultation to guide you through Saudi Arabian traffic zones, Haramain logistical limitations, optimal baggage routing, and multi-fleet VIP coordination. Bring us your itinerary, and we will architect the perfect transportation network for you.
+                 Barakah Transport offers bespoke consultation to guide you through Saudi Arabian traffic zones, Haramain logistical limitations, optimal baggage routing, and multi-fleet premium coordination. Bring us your itinerary, and we will architect the perfect transportation network for you.
                </p>
                <Link href="/contact#booking" className="inline-flex items-center gap-3 bg-[var(--yellow-main)] text-black px-10 py-5 rounded-xl font-black uppercase tracking-wider text-sm shadow-[0_10px_30px_rgba(212,175,55,0.4)] hover:-translate-y-1 hover:bg-yellow-400 hover:shadow-[0_20px_40px_rgba(212,175,55,0.6)] transition-all group">
                  Consult With Us Today <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

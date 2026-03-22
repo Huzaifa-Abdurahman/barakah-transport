@@ -9,7 +9,7 @@ import { useRef } from 'react';
 const stats = [
   { icon: Users, label: 'Pilgrims Served', value: '50K+' },
   { icon: Phone, label: '24/7 Response', value: 'Yes' },
-  { icon: Award, label: 'Elite Class', value: 'VIP' },
+  { icon: Award, label: 'Standard & Premium', value: 'All-Class' },
   { icon: MapPin, label: 'Local Ziyarats', value: '100%' },
   { icon: Car, label: 'Latest Models', value: '2024+' },
   { icon: Clock, label: 'Satisfied Clients', value: '99%' },
@@ -17,17 +17,17 @@ const stats = [
 
 const services = [
   'Jeddah Airport ↔ Makkah / Madinah',
-  'Makkah ↔ Madinah VIP Express',
+  'Makkah ↔ Madinah Premium Express',
   'Madinah Airport ↔ Hotel Transfer',
-  'Exclusive Ziyarats (Makkah & Madinah)',
-  'Haram & Local Spot Services',
+  'Makkah Ziyarats (Cave Hira, Cave Thawr, Arafat)',
+  'Madinah Ziyarats (Masjid Quba, Mount Uhud)',
   'Professional English-Speaking Drivers',
 ];
 
 const fleetPreview = [
-  { src: '/fleet/staria.png', name: 'Staria VIP', tag: 'Most Popular' },
-  { src: '/fleet/hiace.png', name: 'HiAce 10-Seater', tag: 'Group Travel' },
-  { src: '/fleet/yukon.png', name: 'GMC Premium', tag: 'Ultra Luxury' },
+  { src: '/fleet/staria.png', name: 'Staria', tag: 'Most Popular' },
+  { src: '/fleet/hiace.png', name: 'HiAce 17-Seater', tag: 'Group Travel' },
+  { src: '/fleet/yukon.png', name: 'GMC', tag: 'Ultra Luxury' },
 ];
 
 // Skeleton loader for stat card
@@ -158,7 +158,7 @@ export default function UnderHero() {
               </div>
 
               <h2 className="text-4xl lg:text-[3.2rem] font-black uppercase tracking-tighter mb-6 leading-[1.05]">
-                <span className="text-slate-900">Elite Class </span>
+                <span className="text-slate-900">Premium & Standard </span>
                 <br />
                 <span className="text-slate-900">Umrah </span>
                 <span
@@ -175,7 +175,7 @@ export default function UnderHero() {
               <p className="text-[15px] text-slate-500 font-medium max-w-lg leading-relaxed">
                 We guarantee a serene, high-end experience tailored for global pilgrims.
                 Punctual, safe transfers with our latest fleet and trusted multi-lingual drivers.
-                Don&apos;t settle for less on your sacred journey.
+                Don&apos;t settle for less on your <strong>Blessed Journey</strong>.
               </p>
             </div>
 

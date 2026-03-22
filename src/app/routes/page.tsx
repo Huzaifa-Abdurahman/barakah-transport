@@ -3,7 +3,7 @@ import { Plane, Building, Landmark, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Our Routes | Barakah Transport Service",
-  description: "Explore our VIP transfer routes including Airport Transfers, Hotel Transfers, and Sightseeing Tours across Saudi Arabia.",
+  description: "Explore our Premium transfer routes including Airport Transfers, Hotel Transfers, and Sightseeing Tours across Saudi Arabia.",
 };
 
 const PHONE = "966539886719";
@@ -29,12 +29,12 @@ const categories = [
 const individualRoutes = [
   {
     title: "Jeddah Airport ↔ Makkah / Madinah",
-    desc: "Direct VIP transfers from King Abdulaziz International Airport (JED) straight to your hotel in Makkah or Madinah. Travel peacefully with zero waiting times. (Also available for Hotel to Jeddah Airport departure transfers).",
+    desc: "Direct Premium transfers from King Abdulaziz International Airport (JED) straight to your hotel in Makkah or Madinah. Travel peacefully with zero waiting times. (Also available for Hotel to Jeddah Airport departure transfers).",
     img: "/routes/jeddah airport.JPG",
     linkText: "Book Arrival Transfer",
   },
   {
-    title: "Makkah ↔ Madinah VIP Express",
+    title: "Makkah ↔ Madinah Premium Express",
     desc: "Seamless intercity travel between the two Holy Cities. Journey from Makkah to Madinah, or from Madinah back to Makkah. Travel exclusively in our premium fleet with highly experienced chauffeurs on your own schedule.",
     img: "/routes/madina-tomakkah.JPG",
     linkText: "Book City Transfer",
@@ -65,7 +65,7 @@ const individualRoutes = [
   },
   {
     title: "Long Distance: Makkah/Madinah ↔ Dammam",
-    desc: "Need to travel further across the Kingdom of Saudi Arabia? We provide exclusive VIP transfers between Makkah or Madinah and major cities like Dammam, or vice versa.",
+    desc: "Need to travel further across the Kingdom of Saudi Arabia? We provide exclusive Premium transfers between Makkah or Madinah and major cities like Dammam, or vice versa.",
     img: "/routes/damam.JPG",
     linkText: "Book Long Distance",
   },

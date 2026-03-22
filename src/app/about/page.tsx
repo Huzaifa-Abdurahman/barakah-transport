@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Barakah Transport Service - VIP Umrah Taxi",
+  title: "About Us | Barakah Transport Service - Premium Umrah Taxi",
   description:
     "Learn about Barakah Transport Service, founded by CEO Abdullah Khan. 5+ years of trusted experience, 5.0 Google Rating, and over 1000+ satisfied pilgrims served with 0-accident certified drivers.",
 };
@@ -20,7 +20,7 @@ export default function AboutPage() {
           Barakah Transport <br /> Service
         </h1>
         <p className="text-slate-600 max-w-3xl mx-auto font-medium text-lg md:text-xl leading-relaxed">
-          The most trusted, highly reputable Umrah and Hajj VIP Taxi company in the Saudi Arabia region. We stand for excellence, extreme reliability, and preserving the sanctity of your sacred Islamic pilgrimage.
+          The most trusted, highly reputable Umrah and Hajj Premium Taxi company in the Saudi Arabia region. We stand for excellence, extreme reliability, and preserving the sanctity of your <strong>Blessed</strong> Islamic pilgrimage.
         </p>
       </section>
 
@@ -57,7 +57,7 @@ export default function AboutPage() {
             <div className="w-20 h-1.5 bg-[var(--yellow-main)] rounded-full"></div>
 
             <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium mt-2">
-              Under the visionary leadership of <strong>CEO Abdullah Khan</strong>, Barakah Transport Service has rapidly evolved into one of the most highly reputed VIP taxi companies in the Saudi Arabia region.
+              Under the visionary leadership of <strong>CEO Abdullah Khan</strong>, Barakah Transport Service has rapidly evolved into one of the most highly reputed Premium taxi companies in the Saudi Arabia region.
             </p>
 
             <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium">

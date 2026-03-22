@@ -6,9 +6,9 @@ import { MessageSquare, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const heroCars = [
-    { src: "/hero/staria.png", name: "STARIA", tag: "VIP Travel" },
+    { src: "/hero/staria.png", name: "STARIA", tag: "Comfort Travel" },
     { src: "/hero/starex.png", name: "STAREX", tag: "Luxury Van" },
-    { src: "/hero/gmc.png", name: "GMC", tag: "Premium SUV" },
+    { src: "/hero/gmc.png", name: "GMC", tag: "Luxury SUV" },
     { src: "/hero/h1.png", name: "H1", tag: "Executive" },
 ];
 
@@ -102,7 +102,7 @@ export const HeroSection = () => {
                         >
                             <span className="w-8 h-[2px] bg-[var(--yellow-main)] rounded-full" />
                             <span className="text-[var(--yellow-main)] font-black text-[11px] tracking-[0.35em] uppercase">
-                                The Elite Choice
+                                Your Trusted Travel Partner
                             </span>
                         </motion.div>
 
@@ -113,31 +113,32 @@ export const HeroSection = () => {
                             transition={{ duration: 0.65, delay: 0.2 }}
                             className="text-4xl sm:text-5xl lg:text-[3.4rem] font-black text-white leading-[1.05] tracking-tighter mb-6"
                         >
-                            Seamless Comfort
+                            Comfortable Rides
                             <br />
                             For Your{" "}
                             <span
-                                className="relative inline-block"
-                                style={{
-                                    WebkitTextStroke: "2px var(--yellow-main)",
-                                    color: "transparent",
-                                }}
+                                className="relative inline-block text-[var(--yellow-main)] font-black"
                             >
-                                Sacred Journey
+                                Holy Journey
                             </span>
                         </motion.h1>
 
                         {/* Body */}
-                        <motion.p
+                        <motion.div
                             initial={{ opacity: 0, y: 16 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
-                            className="text-slate-400 text-[15px] md:text-base mb-10 leading-relaxed max-w-md font-medium"
+                            className="text-slate-400 text-[15px] md:text-base mb-10 leading-relaxed max-w-md font-medium space-y-4"
                         >
-                            Premium VIP transfers across Saudi Arabia with our latest fleet
-                            and trusted multilingual drivers. Book today for a stress-free
-                            travel experience.
-                        </motion.p>
+                            <p className="text-slate-200">
+                                Travel across Saudi Arabia with peace of mind.
+                                Safe cars, friendly drivers, and easy booking — all in one place.
+                            </p>
+                            <p>
+                                We provide reliable and affordable transport for your Umrah & Ziyarat.
+                                Our experienced drivers speak your language and ensure a smooth journey from start to finish.
+                            </p>
+                        </motion.div>
 
                         {/* ── CTAs ── */}
                         <motion.div
@@ -146,11 +147,10 @@ export const HeroSection = () => {
                             transition={{ duration: 0.6, delay: 0.4 }}
                             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
                         >
-                            {/* WhatsApp button — tall, narrow pill */}
+                            {/* Book button — tall, narrow pill */}
                             <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
                                 <Link
-                                    href={`https://wa.me/${PHONE_RAW}`}
-                                    target="_blank"
+                                    href="/book"
                                     className="group relative inline-flex items-center justify-center gap-2.5 bg-[var(--yellow-main)] text-black font-black text-[13px] uppercase tracking-widest
                              px-8 py-4 rounded-full overflow-hidden
                              shadow-[0_8px_32px_rgba(212,175,55,0.38)]
@@ -160,15 +160,14 @@ export const HeroSection = () => {
                                 >
                                     {/* shimmer sweep */}
                                     <span className="pointer-events-none absolute inset-0 -translate-x-full skew-x-[-20deg] bg-white/15 group-hover:translate-x-[200%] transition-transform duration-500 ease-out" />
-                                    <MessageSquare size={18} className="flex-shrink-0" />
-                                    Book Via WhatsApp
+                                    Book Your Ride Now
                                 </Link>
                             </motion.div>
 
-                            {/* Phone pill */}
+                            {/* WhatsApp pill */}
                             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                                 <a
-                                    href={`tel:+${PHONE_RAW}`}
+                                    href={`https://wa.me/${PHONE_RAW}`}
                                     className="group inline-flex items-center gap-4
                              bg-white/[0.05] border border-white/[0.1]
                              rounded-full
@@ -179,11 +178,11 @@ export const HeroSection = () => {
                                 >
                                     {/* Icon circle */}
                                     <div className="w-11 h-11 flex-shrink-0 rounded-full bg-black/60 border border-[var(--yellow-main)]/40 flex items-center justify-center text-[var(--yellow-main)] group-hover:bg-[var(--yellow-main)] group-hover:text-black group-hover:border-transparent transition-all duration-300">
-                                        <Phone size={18} />
+                                        <MessageSquare size={18} />
                                     </div>
                                     <div className="flex flex-col text-left">
                                         <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500">
-                                            24/7 Support
+                                            Contact on WhatsApp
                                         </span>
                                         <span className="text-base font-black text-white leading-tight">
                                             {PHONE_DISP}
