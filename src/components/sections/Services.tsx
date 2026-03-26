@@ -19,7 +19,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 flex flex-col items-center">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">
-            We provide complete private Umrah taxi for couples and families. Book now!
+            We provide complete private Umrah taxi for groups, couples and families. Book now!
           </h2>
           <div className="w-20 h-1 bg-[var(--yellow-main)] mx-auto mt-4 rounded-full"></div>
         </div>
