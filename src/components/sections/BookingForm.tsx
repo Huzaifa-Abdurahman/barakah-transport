@@ -125,12 +125,12 @@ export default function BookingForm() {
                 <option>Toyota Camry (4 Seater)</option>
                 <option>Hyundai Sonata (4 Seater)</option>
                 <option>Mercedes Sedan (4 Seater)</option>
-                <option>Hyundai Staria (11 Seater)</option>
-                <option>Hyundai Starex (11 to 12 Seater)</option>
-                <option>Hyundai H1 (8 to 12 Seater)</option>
+                <option>Hyundai Staria (8-9 Seater)</option>
+                <option>Hyundai Starex (11 Seater)</option>
+                <option>Hyundai H1 (11 Seater)</option>
                 <option>GMC Yukon XL / Tahoe (7 Seater)</option>
                 <option>Mercedes V-Class (7 Seater)</option>
-                <option>Toyota HiAce (17 Passengers)</option>
+                <option>Toyota HiAce (12 Seater)</option>
                 <option>Large Coaster Bus (30 Seater)</option>
               </select>
               <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">

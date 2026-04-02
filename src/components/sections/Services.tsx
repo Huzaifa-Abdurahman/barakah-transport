@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const serviceCars = [
-  { name: "STARIA", image: "/hero/staria.png", seats: 11, luggage: 7 },
-  { name: "STAREX", image: "/hero/starex.png", seats: "11-12", luggage: 9 },
-  { name: "HYUNDAI H1", image: "/hero/h1.png", seats: "8-12", luggage: 8 },
+  { name: "STARIA", image: "/hero/staria.png", seats: "8-9", luggage: 7 },
+  { name: "STAREX", image: "/hero/starex.png", seats: 11, luggage: 9 },
+  { name: "HYUNDAI H1", image: "/hero/h1.png", seats: 11, luggage: 8 },
   { name: "GMC YUKON XL", image: "/hero/gmc.png", seats: 7, luggage: 7 },
 ];
 

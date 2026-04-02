@@ -26,7 +26,7 @@ const services = [
 
 const fleetPreview = [
   { src: '/fleet/staria.png', name: 'Staria', tag: 'Most Popular' },
-  { src: '/fleet/hiace.png', name: 'HiAce 17-Seater', tag: 'Group Travel' },
+  { src: '/fleet/hiace.png', name: 'HiAce 12-Seater', tag: 'Group Travel' },
   { src: '/fleet/yukon.png', name: 'GMC', tag: 'Ultra Luxury' },
 ];
 

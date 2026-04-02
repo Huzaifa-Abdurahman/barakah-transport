@@ -7,12 +7,12 @@ import { Users, Wifi, Wind, Briefcase, CheckCircle2, PhoneCall } from "lucide-re
 const fleet = [
   {
     id: "hiace",
-    name: "HiAce 17 Passengers",
+    name: "HiAce 12 Seater",
     tag: "Group Choice",
     description: "Ideal for larger families or groups, our Toyota HiAce offers a spacious and comfortable journey with ample room for both passengers and luggage.",
     image: "https://images.unsplash.com/photo-1621213340533-85e683713063?q=80&w=2070&auto=format&fit=crop",
     features: [
-      { icon: <Users size={18} />, label: "Seating Capacity", value: "17" },
+      { icon: <Users size={18} />, label: "Seating Capacity", value: "12" },
       { icon: <Wifi size={18} />, label: "Free WiFi", value: "Yes" },
       { icon: <Briefcase size={18} />, label: "Luggage space", value: "06" },
       { icon: <Wind size={18} />, label: "Air-conditioned", value: "Yes" },
@@ -20,12 +20,12 @@ const fleet = [
   },
   {
     id: "staria",
-    name: "Staria 11 Seater",
+    name: "Staria 8-9 Seater",
     tag: "Luxury Class",
     description: "Experience premium travel with our Hyundai Staria. Modern aesthetics combined with luxurious seating for a truly comfortable pilgrimage experience.",
     image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=1964&auto=format&fit=crop",
     features: [
-      { icon: <Users size={18} />, label: "Seating Capacity", value: "11" },
+      { icon: <Users size={18} />, label: "Seating Capacity", value: "8-9" },
       { icon: <Wifi size={18} />, label: "Free WiFi", value: "Yes" },
       { icon: <Briefcase size={18} />, label: "Luggage space", value: "04" },
       { icon: <Wind size={18} />, label: "Air-conditioned", value: "Yes" },
