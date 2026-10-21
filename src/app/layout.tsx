@@ -4,6 +4,9 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_URL, absoluteUrl } from "@/config/site";
+import { organizationSchema } from "@/lib/schema";
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",
@@ -27,19 +30,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://barakahtransportservice.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Barakah Transport Service | Premium Umrah & Hajj Taxi Saudi Arabia",
     template: "%s | Barakah Transport Service"
   },
-  description: "Saudi Arabia's premier Premium Umrah & Hajj taxi company. Exceptional 5.0 rated transportation between Makkah, Madinah, Jeddah Airport, and all major holy Ziyarats.",
+  description: "Premium Umrah & Hajj taxi between Makkah, Madinah, Jeddah Airport and the holy Ziyarat sites. 24/7 service with a private, air-conditioned fleet.",
   keywords: ["Premium Umrah taxi", "Hajj transport", "Makkah Madina taxi", "Saudi Arabia Premium cab", "Jeddah airport transfer", "Ziyarat tours", "Barakah Transport Service", "premium taxi Makkah"],
   authors: [{ name: "Barakah Transport Service" }],
-  creator: "Abdullah Khan",
   publisher: "Barakah Transport Service",
-  alternates: {
-    canonical: "/",
-  },
+  // No canonical here. Each page sets its own, so no page inherits the homepage's.
   robots: {
     index: true,
     follow: true,
@@ -54,24 +54,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://barakahtransportservice.com",
-    title: "Barakah Transport Service | Premium Transport",
-    description: "Premium Umrah & Hajj Taxi serving Makkah, Madinah, and Jeddah. Over 2,500+ happy passengers served flawlessly.",
+    url: SITE_URL,
+    title: "Barakah Transport Service | Premium Umrah Taxi",
+    description: "Premium Umrah & Hajj taxi serving Makkah, Madinah and Jeddah Airport, 24/7.",
     siteName: "Barakah Transport Service",
     images: [
       {
-        url: "/icon.png",
+        url: absoluteUrl("/og-default.jpg"),
         width: 1200,
         height: 630,
-        alt: "Barakah Transport Service Logo",
+        alt: "Barakah Transport Service premium fleet",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Barakah Transport Service | Premium Umrah Taxi",
-    description: "Experience 5-star Premium transportation across Saudi Arabia's Holiest Cities.",
-    images: ["/icon.png"],
+    description: "Premium private transport across Saudi Arabia's holy cities, 24/7.",
+    images: [absoluteUrl("/og-default.jpg")],
   },
   icons: {
     icon: [
@@ -93,6 +93,7 @@ export default function RootLayout({
       <body
         className={`${cinzel.variable} ${cormorant.variable} ${inter.variable} antialiased min-h-screen`}
       >
+        <JsonLd data={organizationSchema()} />
         <Navbar />
         {children}
         <Footer />

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us | Barakah Transport Service - Premium Umrah Taxi",
+export const metadata: Metadata = pageMetadata({
+  title: "About Us",
   description:
-    "Learn about Barakah Transport Service, founded by CEO Abdullah Khan. 5+ years of trusted experience, 5.0 Google Rating, and over 1000+ satisfied pilgrims served with 0-accident certified drivers.",
-};
+    "Learn about Barakah Transport Service, founded by CEO Abdullah Khan. A premium Umrah and Hajj taxi company serving Makkah, Madinah and Jeddah Airport, 24/7.",
+  path: "/about",
+});
 export default function AboutPage() {
   return (
     <main className="pt-24 md:pt-32 pb-20 min-h-screen relative" style={{ backgroundImage: "url('/i4.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}>
@@ -44,8 +46,8 @@ export default function AboutPage() {
             </div>
             {/* Badge */}
             <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-[var(--yellow-main)] text-black w-32 h-32 md:w-40 md:h-40 rounded-full flex flex-col justify-center items-center shadow-xl border-4 border-slate-50 rotate-12 hover:rotate-0 transition-transform duration-500 z-10">
-              <span className="text-2xl md:text-3xl font-black">5+</span>
-              <span className="text-[10px] md:text-xs font-black uppercase text-center leading-tight tracking-widest mt-1 px-4">Years of Trust</span>
+              <span className="text-2xl md:text-3xl font-black">24/7</span>
+              <span className="text-[10px] md:text-xs font-black uppercase text-center leading-tight tracking-widest mt-1 px-4">Always On Call</span>
             </div>
           </div>
 
@@ -61,11 +63,11 @@ export default function AboutPage() {
             </p>
 
             <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium">
-              We exclusively utilize <strong>Saudi Government-Certified Drivers</strong> driving highly-maintained, premium cars. Because your life and comfort matter, we strictly maintain a flawless <strong>0 Accident Ratio</strong>, allowing you to focus entirely on your religious duties in absolute peace of mind.
+              We run a <strong>premium, air-conditioned fleet</strong> of well-maintained vehicles, from 4-seat sedans to 12-seat vans, so you can focus on your religious duties with peace of mind.
             </p>
 
             <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium">
-              Having successfully served more than <strong>1000+ satisfied pilgrims and clients</strong> across Makkah and Madinah, we let our impeccable track-record of <strong>5.0+ Ratings on Google Business</strong> speak for our uncompromised dedication to excellence.
+              Our team is available <strong>24 hours a day, 7 days a week</strong> to arrange airport transfers, intercity rides and ziyarat tours across Makkah, Madinah and Jeddah.
             </p>
           </div>
         </div>
@@ -75,20 +77,20 @@ export default function AboutPage() {
       <section className="px-4 py-16 max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           <div className="bg-white p-6 md:p-8 rounded-[2rem] border border-slate-200 shadow-md text-center flex flex-col items-center hover:border-[var(--yellow-main)] transition-colors">
-            <span className="text-4xl md:text-5xl font-black text-slate-900 mb-2">5+</span>
-            <span className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest">Years Experience</span>
+            <span className="text-4xl md:text-5xl font-black text-slate-900 mb-2">24/7</span>
+            <span className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest">Service</span>
           </div>
           <div className="bg-white p-6 md:p-8 rounded-[2rem] border border-slate-200 shadow-md text-center flex flex-col items-center hover:border-[var(--yellow-main)] transition-colors">
-            <span className="text-4xl md:text-5xl font-black text-[var(--yellow-main)] mb-2">5.0</span>
-            <span className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest">Google Rating</span>
+            <span className="text-4xl md:text-5xl font-black text-[var(--yellow-main)] mb-2">9</span>
+            <span className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest">Vehicles</span>
           </div>
           <div className="bg-white p-6 md:p-8 rounded-[2rem] border border-slate-200 shadow-md text-center flex flex-col items-center hover:border-[var(--yellow-main)] transition-colors">
-            <span className="text-4xl md:text-5xl font-black text-slate-900 mb-2">0%</span>
-            <span className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest">Accident Ratio</span>
+            <span className="text-4xl md:text-5xl font-black text-slate-900 mb-2">4–12</span>
+            <span className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest">Seat Sizes</span>
           </div>
           <div className="bg-white p-6 md:p-8 rounded-[2rem] border border-slate-200 shadow-md text-center flex flex-col items-center hover:border-[var(--yellow-main)] transition-colors">
-            <span className="text-4xl md:text-5xl font-black text-slate-900 mb-2">1k+</span>
-            <span className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest">Pilgrims Served</span>
+            <span className="text-4xl md:text-5xl font-black text-slate-900 mb-2">2</span>
+            <span className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest">Airports Covered</span>
           </div>
         </div>
       </section>

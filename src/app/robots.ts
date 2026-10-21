@@ -1,12 +1,13 @@
-import { MetadataRoute } from 'next'
- 
+import type { MetadataRoute } from "next";
+import { absoluteUrl } from "@/config/site";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/'],
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/api/"],
     },
-    sitemap: 'https://barakahtransportservice.com/sitemap.xml',
-  }
+    sitemap: absoluteUrl("/sitemap.xml"),
+  };
 }

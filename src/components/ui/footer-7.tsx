@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { BUSINESS } from "@/config/business";
 
 interface Footer7Props {
   logo?: { url: string; src: string; alt: string; title: string };
@@ -13,14 +14,17 @@ interface Footer7Props {
   legalLinks?: Array<{ name: string; href: string }>;
 }
 
+// Every link points at a real page. Business details come from the config file.
 const defaultSections = [
   {
-    title: "Services",
+    title: "Routes",
     links: [
-      { name: "Jeddah Airport Transfer", href: "/services" },
-      { name: "Makkah to Madinah", href: "/services" },
-      { name: "Madinah to Makkah", href: "/services" },
-      { name: "Ziyarat Tours", href: "/services" },
+      { name: "Jeddah Airport to Makkah", href: "/jeddah-airport-to-makkah-taxi" },
+      { name: "Makkah to Madinah", href: "/makkah-to-madinah-taxi" },
+      { name: "Madinah to Makkah", href: "/madinah-to-makkah-taxi" },
+      { name: "Madinah Airport Transfer", href: "/madinah-airport-transfer" },
+      { name: "Makkah Ziyarat Tour", href: "/makkah-ziyarat-tour" },
+      { name: "Madinah Ziyarat Tour", href: "/madinah-ziyarat-tour" },
     ],
   },
   {
@@ -28,28 +32,28 @@ const defaultSections = [
     links: [
       { name: "About Us", href: "/about" },
       { name: "Our Vehicles", href: "/our-vehicles" },
-      { name: "Locations", href: "/locations" },
+      { name: "Services", href: "/services" },
       { name: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Contact",
     links: [
-      { name: "+966 53 988 6719", href: "tel:+966539886719" },
-      { name: "barakah.trans.service@gmail.com", href: "mailto:barakah.trans.service@gmail.com" },
-      { name: "Medina, Saudi Arabia", href: "#" },
+      { name: BUSINESS.phone.replace(/^\+966/, "+966 "), href: `tel:${BUSINESS.phone}` },
+      { name: BUSINESS.email, href: `mailto:${BUSINESS.email}` },
+      { name: `${BUSINESS.address.locality}, Saudi Arabia`, href: "/contact" },
     ],
   },
 ];
 
 const defaultSocialLinks = [
-  { icon: <FaInstagram className="w-5 h-5" />, href: "https://www.instagram.com/barakahtransportsrevice/?hl=en", label: "Instagram" },
-  { icon: <FaFacebook className="w-5 h-5" />, href: "https://www.facebook.com/profile.php?id=61587584106438", label: "Facebook" },
+  { icon: <FaInstagram className="w-5 h-5" />, href: BUSINESS.social.instagram, label: "Instagram" },
+  { icon: <FaFacebook className="w-5 h-5" />, href: BUSINESS.social.facebook, label: "Facebook" },
 ];
 
 const defaultLegalLinks = [
-  { name: "Terms and Conditions", href: "#" },
-  { name: "Privacy Policy", href: "#" },
+  { name: "Terms and Conditions", href: "/terms" },
+  { name: "Privacy Policy", href: "/privacy" },
 ];
 
 const fadeUp: any = {

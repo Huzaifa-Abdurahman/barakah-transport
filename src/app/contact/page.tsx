@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import BookingForm from "@/components/sections/BookingForm";
 import { Phone, Mail, MapPin, MessageCircle, Instagram, Facebook } from "lucide-react";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Barakah Transport Service",
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Us",
   description: "Get in touch with Barakah Transport Service for Premium Umrah and Hajj taxi bookings. We are available 24/7.",
-};
+  path: "/contact",
+});
 
 const contactCards = [
   {

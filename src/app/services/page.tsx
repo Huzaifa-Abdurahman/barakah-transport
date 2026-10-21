@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import { CarFront, PlaneTakeoff, Map, Briefcase, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import BookingForm from "@/components/sections/BookingForm";
+import RouteLinks from "@/components/seo/RouteLinks";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Premium Services | Barakah Transport Service",
-  description: "Excellence in Saudi Arabia. From Premium Umrah Taxi services and detailed Ziyarat guidance to professional transport and vehicle consulting for Hajj groups.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Premium Services",
+  description: "Premium Umrah taxi, airport transfers, ziyarat tours and vehicle consulting for Hajj and Umrah groups across Makkah, Madinah and Jeddah.",
+  path: "/services",
+});
 
 const servicesData = [
   {
@@ -112,6 +115,8 @@ export default function ServicesPage() {
             </div>
          </div>
       </section>
+
+      <RouteLinks />
 
       {/* Global Booking Form Integration */}
       <BookingForm />

@@ -5,14 +5,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, Users, MapPin, Clock, Car, Award } from 'lucide-react';
 import { useRef } from 'react';
+import { claimEnabled, type ClaimKey } from '@/config/claims';
+import { ROUTES } from '@/data/routes';
 
+// Only facts the site can already back up. Pilgrim counts, satisfaction rates
+// and model years were removed because nothing in the repo supports them.
 const stats = [
-  { icon: Users, label: 'Pilgrims Served', value: '50K+' },
-  { icon: Phone, label: '24/7 Response', value: 'Yes' },
-  { icon: Award, label: 'Standard & Premium', value: 'All-Class' },
-  { icon: MapPin, label: 'Local Ziyarats', value: '100%' },
-  { icon: Car, label: 'Latest Models', value: '2024+' },
-  { icon: Clock, label: 'Satisfied Clients', value: '99%' },
+  { icon: Clock, label: '24/7 Service', value: '24/7' },
+  { icon: Car, label: 'Vehicles in Fleet', value: '9' },
+  { icon: Users, label: 'Seat Sizes', value: '4–12' },
+  { icon: Phone, label: 'Airports Covered', value: '2' },
+  { icon: MapPin, label: 'Ziyarat Sites', value: String(ROUTES.reduce((n, r) => n + (r.stops?.length ?? 0), 0)) },
+  { icon: Award, label: 'Cities Served', value: '3' },
 ];
 
 const services = [
@@ -21,7 +25,15 @@ const services = [
   'Madinah Airport ↔ Hotel Transfer',
   'Makkah Ziyarats (Cave Hira, Cave Thawr, Arafat)',
   'Madinah Ziyarats (Masjid Quba, Mount Uhud)',
-  'Professional English-Speaking Drivers',
+  'Professional Drivers',
+];
+
+// Trust badges show only once their claim is verified (config/claims.ts).
+const trustBadgeClaims: { label: string; claim: ClaimKey }[] = [
+  { label: 'Licensed & Insured', claim: 'licensedInsured' },
+  { label: 'Saudi MOT Certified', claim: 'saudiMot' },
+  { label: 'Hajj & Umrah Ministry Approved', claim: 'hajjUmrahMinistry' },
+  { label: 'GPS Tracked Vehicles', claim: 'gpsTracked' },
 ];
 
 const fleetPreview = [
@@ -51,6 +63,7 @@ function FleetSkeleton({ wide = false }: { wide?: boolean }) {
 export default function UnderHero() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-80px' });
+  const trustBadges = trustBadgeClaims.filter((b) => claimEnabled(b.claim));
 
   return (
     <section
@@ -86,7 +99,7 @@ export default function UnderHero() {
         >
           <div className="h-px w-16 bg-gradient-to-r from-transparent to-[var(--yellow-main)]" />
           <span className="text-[var(--yellow-main)] uppercase tracking-[0.35em] font-black text-[11px]">
-            Barakh Transport Service
+            Barakah Transport Service
           </span>
           <div className="h-px w-16 bg-gradient-to-l from-transparent to-[var(--yellow-main)]" />
         </motion.div>
@@ -271,20 +284,22 @@ export default function UnderHero() {
           </motion.div>
         </div>
 
-        {/* ── Bottom trust strip ── */}
+        {/* ── Bottom trust strip (only verified badges) ── */}
+        {trustBadges.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-24 pt-10 border-t border-slate-200/80 flex flex-wrap items-center justify-center gap-x-12 gap-y-4"
         >
-          {['Licensed & Insured', 'Saudi MOT Certified', 'Hajj & Umrah Ministry Approved', 'GPS Tracked Vehicles'].map((badge, i) => (
+          {trustBadges.map((badge, i) => (
             <div key={i} className="flex items-center gap-2 text-slate-400">
               <div className="w-1.5 h-1.5 bg-[var(--yellow-main)] rounded-full" />
-              <span className="text-[11px] uppercase font-bold tracking-[0.2em]">{badge}</span>
+              <span className="text-[11px] uppercase font-bold tracking-[0.2em]">{badge.label}</span>
             </div>
           ))}
         </motion.div>
+        )}
 
       </div>
 

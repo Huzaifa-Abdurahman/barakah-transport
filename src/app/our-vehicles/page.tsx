@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import BookingForm from "@/components/sections/BookingForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Our Vehicles | Barakah Transport Service",
+export const metadata: Metadata = pageMetadata({
+  title: "Our Vehicles",
   description:
-    "Browse our comprehensive premium fleet of 9 vehicles. All air-conditioned, sanitized, and fully serviced for your **Blessed Journey**.",
-};
+    "Browse our premium fleet of 9 vehicles, from 4-seat sedans to 12-seat HiAce vans. All air-conditioned, sanitized and fully serviced for families and groups.",
+  path: "/our-vehicles",
+});
 
 const allVehicles = [
   { name: "STARIA", image: "/hero/staria.png", seats: "8-9", luggage: 7 },
@@ -37,7 +36,7 @@ export default function FleetPage() {
             Available Umrah Vehicles
           </h1>
           <p className="text-slate-500 max-w-2xl mx-auto font-medium">
-            Explore our vast selection of premium, sanitized vehicles perfectly sized for individuals, families, and larger groups making their **Blessed Journey**.
+            Explore our selection of premium, sanitized vehicles, sized for individuals, families and larger groups making their blessed journey.
           </p>
         </section>
 

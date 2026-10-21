@@ -1,42 +1,33 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { ROUTES } from "@/data/routes";
+import { absoluteUrl, PAGE_UPDATED } from "@/config/site";
 
+// Every entry is a real page on the www host, returning 200 with no redirect.
+// Add a page here (or as a route in data/routes.ts) when you create it.
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://barakahtransportservice.com',
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: 'https://barakahtransportservice.com/routes',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://barakahtransportservice.com/about',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://barakahtransportservice.com/our-vehicles',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://barakahtransportservice.com/services',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://barakahtransportservice.com/contact',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.6,
-    },
-  ]
+  const staticPages: { path: string; updated: string; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number }[] = [
+    { path: "/", updated: PAGE_UPDATED.home, changeFrequency: "weekly", priority: 1 },
+    { path: "/routes", updated: PAGE_UPDATED.routes, changeFrequency: "weekly", priority: 0.9 },
+    { path: "/services", updated: PAGE_UPDATED.services, changeFrequency: "monthly", priority: 0.8 },
+    { path: "/our-vehicles", updated: PAGE_UPDATED.fleet, changeFrequency: "monthly", priority: 0.8 },
+    { path: "/about", updated: PAGE_UPDATED.about, changeFrequency: "monthly", priority: 0.7 },
+    { path: "/book", updated: PAGE_UPDATED.book, changeFrequency: "monthly", priority: 0.8 },
+    { path: "/contact", updated: PAGE_UPDATED.contact, changeFrequency: "monthly", priority: 0.7 },
+    { path: "/terms", updated: PAGE_UPDATED.terms, changeFrequency: "yearly", priority: 0.2 },
+    { path: "/privacy", updated: PAGE_UPDATED.privacy, changeFrequency: "yearly", priority: 0.2 },
+  ];
+
+  const routePages = ROUTES.map((r) => ({
+    path: `/${r.slug}`,
+    updated: PAGE_UPDATED.route,
+    changeFrequency: "monthly" as const,
+    priority: r.kind === "route" ? 0.8 : 0.7,
+  }));
+
+  return [...staticPages, ...routePages].map((p) => ({
+    url: absoluteUrl(p.path),
+    lastModified: new Date(p.updated),
+    changeFrequency: p.changeFrequency,
+    priority: p.priority,
+  }));
 }

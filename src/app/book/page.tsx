@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import BookingForm from "@/components/sections/BookingForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Book Your Ride | Barakah Transport Service",
+export const metadata: Metadata = pageMetadata({
+  title: "Book Your Ride",
   description:
     "Book a Premium Umrah or Hajj taxi in Saudi Arabia. Airport transfers, intercity travel, hotel pickups, and Ziyarat tours across Makkah, Madina, and Jeddah.",
-};
+  path: "/book",
+});
 
 export default function BookPage() {
   return (

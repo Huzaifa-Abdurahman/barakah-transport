@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, Phone, Star, Check, ShieldCheck, Car } from "lucide-react";
+import { MessageCircle, Phone, Star, Check } from "lucide-react";
 
 export default function WhyUs() {
   const contactInfo = {
@@ -33,48 +33,7 @@ export default function WhyUs() {
                  className="relative z-10 w-full h-[240px] md:h-[280px] object-cover rounded-2xl overflow-hidden shadow-md border border-white/5 mb-6 hover:scale-[1.02] transition-transform duration-500 bg-white" 
                />
                
-               {/* Normal Flow Grid of Badges Instead of Absolute Position */}
-               <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3 relative z-10 mt-auto">
-                  <div className="bg-white/[0.03] border border-white/10 rounded-xl p-3 flex items-center gap-3">
-                     <div className="w-10 h-10 rounded-full bg-[var(--yellow-main)]/10 flex flex-shrink-0 items-center justify-center text-[var(--yellow-main)]">
-                       <Star size={20} fill="currentColor" />
-                     </div>
-                     <div className="text-left">
-                        <div className="text-lg font-bold text-white leading-none mb-1">100%</div>
-                        <div className="text-[11px] font-medium text-slate-400 leading-tight uppercase tracking-wider">Reliability Rate</div>
-                     </div>
-                  </div>
-                  
-                  <div className="bg-white/[0.03] border border-white/10 rounded-xl p-3 flex items-center gap-3">
-                     <div className="w-10 h-10 rounded-full bg-slate-800 flex flex-shrink-0 items-center justify-center text-white">
-                       <Check size={20} className="stroke-[3px]" />
-                     </div>
-                     <div className="text-left">
-                        <div className="text-sm font-bold text-white leading-tight">Govt. Approved</div>
-                        <div className="text-[11px] text-slate-400 mt-1 uppercase tracking-wider">Saudi Arabia</div>
-                     </div>
-                  </div>
-
-                  <div className="bg-white/[0.03] border border-white/10 rounded-xl p-3 flex items-center gap-3">
-                     <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex flex-shrink-0 items-center justify-center text-emerald-400">
-                       <ShieldCheck size={20} className="stroke-[2px]" />
-                     </div>
-                     <div className="text-left">
-                        <div className="text-sm font-bold text-white leading-tight">Nusuk Approved</div>
-                        <div className="text-[11px] text-slate-400 mt-1 uppercase tracking-wider">Official Platform</div>
-                     </div>
-                  </div>
-
-                  <div className="bg-white/[0.03] border border-white/10 rounded-xl p-3 flex items-center gap-3">
-                     <div className="w-10 h-10 rounded-full bg-blue-500/10 flex flex-shrink-0 items-center justify-center text-blue-400">
-                       <Car size={20} className="stroke-[2px]" />
-                     </div>
-                     <div className="text-left">
-                        <div className="text-sm font-bold text-white leading-tight">PTA Approved</div>
-                        <div className="text-[11px] text-slate-400 mt-1 uppercase tracking-wider">Govt Certified Cars</div>
-                     </div>
-                  </div>
-               </div>
+               {/* Approval badges (Nusuk, Govt, Reliability) removed until verified: see config/claims.ts */}
             </motion.div>
           </div>
 

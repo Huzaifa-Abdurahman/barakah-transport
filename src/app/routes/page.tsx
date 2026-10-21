@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { Plane, Building, Landmark, ArrowRight } from "lucide-react";
+import { pageMetadata } from "@/lib/seo";
+import RouteLinks from "@/components/seo/RouteLinks";
 
-export const metadata: Metadata = {
-  title: "Our Routes | Barakah Transport Service",
-  description: "Explore our Premium transfer routes including Airport Transfers, Hotel Transfers, and Sightseeing Tours across Saudi Arabia.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Routes & Ziyarat Tours",
+  description:
+    "Private taxi routes across Saudi Arabia: Jeddah Airport to Makkah, Makkah to Madinah, Madinah Airport transfers and Makkah and Madinah ziyarat tours. Open 24/7.",
+  path: "/routes",
+});
 
 const PHONE = "966539886719";
 
@@ -150,6 +154,7 @@ export default function RoutesPage() {
         </div>
       </section>
 
+      <RouteLinks />
     </main>
   );
 }
