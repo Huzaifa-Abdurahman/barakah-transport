@@ -5,7 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import JsonLd from "@/components/seo/JsonLd";
-import { SITE_URL, absoluteUrl } from "@/config/site";
+import { SITE_URL, GA_MEASUREMENT_ID, absoluteUrl } from "@/config/site";
 import { organizationSchema } from "@/lib/schema";
 
 const cinzel = Cinzel({
@@ -90,6 +90,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google tag (gtag.js): must be the only GA tag on each page, directly after <head> */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', '${GA_MEASUREMENT_ID}');`,
+          }}
+        />
+      </head>
       <body
         className={`${cinzel.variable} ${cormorant.variable} ${inter.variable} antialiased min-h-screen`}
       >

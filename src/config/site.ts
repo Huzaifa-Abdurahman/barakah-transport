@@ -2,6 +2,9 @@
 // and robots Sitemap line must use this exact origin (no redirect hops).
 export const SITE_URL = "https://www.barakahtransportservice.com";
 
+// Google Analytics 4 measurement ID (from the Google tag installed in the root layout).
+export const GA_MEASUREMENT_ID = "G-2QGM30J6QF";
+
 // The homepage is SITE_URL with no trailing slash. Sitemap, canonical and og:url
 // must all use the same string, or Google reads them as different URLs.
 export function absoluteUrl(path: string = "/"): string {
