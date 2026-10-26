@@ -33,6 +33,7 @@ const defaultSections = [
       { name: "About Us", href: "/about" },
       { name: "Our Vehicles", href: "/our-vehicles" },
       { name: "Services", href: "/services" },
+      { name: "Blog", href: "/blog" },
       { name: "Contact", href: "/contact" },
     ],
   },

@@ -23,6 +23,7 @@ export default function Navbar() {
     { name: "OUR VEHICLES", href: "/our-vehicles" },
     { name: "ABOUT", href: "/about" },
     { name: "ROUTES", href: "/routes" },
+    { name: "BLOG", href: "/blog" },
     { name: "CONTACT", href: "/contact" },
   ];
 
@@ -101,6 +102,9 @@ export default function Navbar() {
               </Link>
               <Link href="/routes" className="text-xl font-bold tracking-wide text-white" onClick={() => setIsOpen(false)}>
                 Routes
+              </Link>
+              <Link href="/blog" className="text-xl font-bold tracking-wide text-white" onClick={() => setIsOpen(false)}>
+                Blog
               </Link>
               <Link href="/contact" className="text-xl font-bold tracking-wide text-white" onClick={() => setIsOpen(false)}>
                 Contact Us

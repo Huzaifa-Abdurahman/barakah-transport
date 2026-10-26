@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { ROUTES } from "@/data/routes";
+import { BLOG_POSTS } from "@/data/blog";
 import { absoluteUrl, PAGE_UPDATED } from "@/config/site";
 
 // Every entry is a real page on the www host, returning 200 with no redirect.
@@ -11,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/services", updated: PAGE_UPDATED.services, changeFrequency: "monthly", priority: 0.8 },
     { path: "/our-vehicles", updated: PAGE_UPDATED.fleet, changeFrequency: "monthly", priority: 0.8 },
     { path: "/about", updated: PAGE_UPDATED.about, changeFrequency: "monthly", priority: 0.7 },
+    { path: "/blog", updated: PAGE_UPDATED.blog, changeFrequency: "weekly", priority: 0.8 },
     { path: "/book", updated: PAGE_UPDATED.book, changeFrequency: "monthly", priority: 0.8 },
     { path: "/contact", updated: PAGE_UPDATED.contact, changeFrequency: "monthly", priority: 0.7 },
     { path: "/terms", updated: PAGE_UPDATED.terms, changeFrequency: "yearly", priority: 0.2 },
@@ -24,7 +26,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: r.kind === "route" ? 0.8 : 0.7,
   }));
 
-  return [...staticPages, ...routePages].map((p) => ({
+  const blogPages = BLOG_POSTS.map((p) => ({
+    path: `/blog/${p.slug}`,
+    updated: p.updatedAt,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...routePages, ...blogPages].map((p) => ({
     url: absoluteUrl(p.path),
     lastModified: new Date(p.updated),
     changeFrequency: p.changeFrequency,
