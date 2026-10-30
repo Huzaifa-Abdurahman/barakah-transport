@@ -1,6 +1,10 @@
-// Blog posts. Each post is one entry here. Keep facts general and verifiable:
-// prices, opening hours and access rules change, so point readers to the route
-// pages or WhatsApp for current fares.
+// Blog posts. Keep facts general and verifiable: prices, opening hours and access
+// rules change, so point readers to the route pages or WhatsApp for current fares.
+// Topic files: blog-ziyarat.ts (ziyarat sites and routes), blog-transport.ts
+// (roads and private taxi). The core guides stay in this file.
+
+import { ZIYARAT_POSTS } from "./blog-ziyarat";
+import { TRANSPORT_POSTS } from "./blog-transport";
 
 export interface BlogSection {
   heading: string;
@@ -17,15 +21,16 @@ export interface BlogPost {
   updatedAt: string; // YYYY-MM-DD
   readMinutes: number;
   primaryKeyword: string; // used for planning only, not shown on the page
+  keywords: string[]; // meta keywords and planning targets (Google ignores meta keywords; they are kept for other tools)
   relatedRoute: string; // slug of a route or ziyarat page in data/routes.ts
   intro: string;
   sections: BlogSection[];
 }
 
-export const BLOG_POSTS: BlogPost[] = [
+const CORE_POSTS: BlogPost[] = [
   {
     slug: "makkah-ziyarat-places-guide",
-    title: "Makkah Ziyarat Places: A Complete Guide for Pilgrims",
+    title: "Makkah Ziyarat Places: Complete Guide",
     description:
       "The main ziyarat places in Makkah, including Cave Hira, Cave Thawr, Jannat al-Mu'alla, Mina, Arafat and Muzdalifah, with planning tips for each visit.",
     category: "Ziyarat",
@@ -33,6 +38,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: "2026-10-26",
     readMinutes: 6,
     primaryKeyword: "makkah ziyarat",
+    keywords: ["makkah ziyarat", "ziyarat places in makkah", "makkah ziyarat places", "cave hira", "jannat al mualla"],
     relatedRoute: "makkah-ziyarat-tour",
     intro:
       "Ziyarat means visiting places linked to the life of the Prophet ﷺ and to the history of Islam. Ziyarat is not part of the obligatory rites of Umrah or Hajj, but many pilgrims want to see these places while they are in Makkah. This guide covers the main sites and how to plan a visit.",
@@ -80,7 +86,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "madinah-ziyarat-places-guide",
-    title: "Madinah Ziyarat Places: The Sites Every Pilgrim Should Know",
+    title: "Madinah Ziyarat Places: Sites to Visit",
     description:
       "A guide to the ziyarat places in Madinah, from Masjid Quba and Masjid al-Qiblatayn to Mount Uhud and the Seven Mosques, with tips on how to visit them.",
     category: "Ziyarat",
@@ -88,6 +94,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: "2026-10-26",
     readMinutes: 6,
     primaryKeyword: "ziyarat places in madinah",
+    keywords: ["ziyarat places in madinah", "madina ziyarat places", "madinah ziyarat", "masjid quba", "masjid al qiblatain"],
     relatedRoute: "madinah-ziyarat-tour",
     intro:
       "Madinah has many historic sites linked to the Prophet ﷺ, his family and his companions. Some are within walking distance of the Prophet's Mosque, and others are a short drive away. Here is a practical guide to the main sites.",
@@ -132,7 +139,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "jeddah-airport-to-makkah-guide",
-    title: "Jeddah Airport to Makkah: Distance, Travel Time and Your Options",
+    title: "Jeddah Airport to Makkah: Distance and Time",
     description:
       "How far Jeddah Airport is from Makkah, how long the trip takes, and how to compare a private taxi, the Haramain train and the bus for your group.",
     category: "Transport Guide",
@@ -140,6 +147,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: "2026-10-26",
     readMinutes: 5,
     primaryKeyword: "jeddah to makkah distance",
+    keywords: ["jeddah to makkah distance", "jeddah airport to makkah taxi", "jeddah to makkah", "jeddah to makkah taxi", "haramain train tickets"],
     relatedRoute: "jeddah-airport-to-makkah-taxi",
     intro:
       "Most pilgrims arrive at King Abdulaziz International Airport (JED) in Jeddah and go straight on to Makkah. The trip is short by road, but the best option depends on how many people and bags you have and what time you land.",
@@ -185,6 +193,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: "2026-10-26",
     readMinutes: 6,
     primaryKeyword: "makkah to madinah bus",
+    keywords: ["makkah to madinah bus", "makkah to madinah taxi", "haramain train tickets", "taxi from makkah to madinah"],
     relatedRoute: "makkah-to-madinah-taxi",
     intro:
       "Many pilgrims travel between Makkah and Madinah during their trip. The road journey is about 450 km and takes around 4 to 5 hours, depending on traffic. Here is how the three main options compare.",
@@ -222,7 +231,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "miqat-guide-for-madinah-pilgrims",
-    title: "The Miqat for Pilgrims from Madinah: What You Need to Know",
+    title: "Miqat for Madinah Pilgrims: What to Know",
     description:
       "What the Miqat is, where pilgrims travelling from Madinah enter ihram, and how to plan the stop if you are travelling to Makkah by taxi.",
     category: "Travel Tips",
@@ -230,6 +239,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: "2026-10-26",
     readMinutes: 5,
     primaryKeyword: "miqat from madinah",
+    keywords: ["miqat from madinah", "miqat", "miqat madinah", "dhul hulaifah"],
     relatedRoute: "madinah-to-makkah-taxi",
     intro:
       "The Miqat is the boundary where pilgrims must enter the state of ihram before going further towards Makkah. Pilgrims coming from Madinah have their own Miqat. Knowing where it is, and planning the stop, makes the journey easier.",
@@ -261,7 +271,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cave-hira-visiting-guide",
-    title: "Visiting Cave Hira (Jabal al-Nour): A Practical Guide",
+    title: "Cave Hira (Jabal al-Nour): Visiting Guide",
     description:
       "Everything to know before visiting Cave Hira on Jabal al-Nour, where the first revelation came. The climb, what to bring and how to plan the visit safely.",
     category: "Ziyarat",
@@ -269,6 +279,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: "2026-10-26",
     readMinutes: 5,
     primaryKeyword: "hira cave jabal al nour",
+    keywords: ["hira cave jabal al nour", "ghar e hira", "cave of hira", "jabal al nour"],
     relatedRoute: "makkah-ziyarat-tour",
     intro:
       "Cave Hira, on Jabal al-Nour (the Mountain of Light), is one of the most visited ziyarat sites in Makkah. It is the cave where the first verses of the Quran were revealed to the Prophet ﷺ. The visit involves a steep climb, so a little preparation makes a big difference.",
@@ -308,7 +319,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "umrah-taxi-checklist-for-families",
-    title: "Umrah Taxi Checklist for Families and Elderly Pilgrims",
+    title: "Umrah Taxi Checklist for Families",
     description:
       "A checklist to use before you book an Umrah taxi for your family: seats, luggage, fixed fares, pickup, comfort for elderly travellers and what to confirm in writing.",
     category: "Travel Tips",
@@ -316,6 +327,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: "2026-10-26",
     readMinutes: 5,
     primaryKeyword: "umrah taxi",
+    keywords: ["umrah taxi", "umrah taxi service", "umrah transport", "private taxi for umrah"],
     relatedRoute: "jeddah-airport-to-makkah-taxi",
     intro:
       "Travelling with family, especially with elderly parents or young children, needs more planning than travelling alone. Use this checklist before you book an Umrah taxi, so you know exactly what you are getting.",
@@ -366,5 +378,8 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 ];
+
+// Posts are kept in separate files by topic. Add new posts there, not here.
+export const BLOG_POSTS: BlogPost[] = [...CORE_POSTS, ...ZIYARAT_POSTS, ...TRANSPORT_POSTS];
 
 export const BLOG_BY_SLUG: Record<string, BlogPost> = Object.fromEntries(BLOG_POSTS.map((p) => [p.slug, p]));

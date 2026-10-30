@@ -94,3 +94,28 @@ Their advantage is a dedicated route page and a ziyarat list page for almost eve
 - **Makkah and Madinah transfer pages** still have no prices. Add them after the client confirms the fares.
 - **Ranking positions** for our target keywords were not measured, because we rank for nothing yet. Track them after indexing.
 - **Keyword volumes** come from DataForSEO's Saudi Arabia database. Google's own Keyword Planner may show different numbers.
+
+## 6. Second batch (30 Oct 2026): ziyarat routes, sites and private taxi
+
+The keyword API for new queries was unavailable on this date (DataForSEO returned a quota error, and Semrush reported no API units). The volumes below come from the earlier competitor pull, which is still valid as a baseline. Re-run the new queries once the API is available, and update the figures in `src/data/blog-*.ts`.
+
+| Post | Primary keyword | Monthly searches (earlier pull) |
+| --- | --- | --- |
+| Makkah ziyarat route: one-day plan | ziyarat in makkah | 3,600 |
+| Madinah ziyarat route: one-day plan | madina ziyarat places | 1,300 |
+| Umrah ziyarat itinerary: five days | umrah ziyarat | not measured |
+| Masjid Quba visit guide | masjid quba | about 201,000 (variant cluster) |
+| Masjid al-Qiblatain visit guide | masjid al qiblatain | 33,100 (cluster) |
+| Mount Uhud visit guide | uhud mountain | 49,500 |
+| Jannat al-Baqi visit guide | jannat al baqi | 22,200 (cluster) |
+| Arafat, Mina and Muzdalifah guide | jabal arafat | 22,200 |
+| Makkah to Madinah road guide | taxi from madinah to makkah | 320 |
+| Book a private taxi for Umrah online | umrah taxi online | 260 |
+| Taxi from Makkah hotel to the Haram | bab makkah taxi | 590 |
+| Madinah airport taxi to your hotel | madinah airport taxi | 1,000 |
+| Private taxi vs ride-hailing in Saudi Arabia | saudi taxi | 720 |
+| Makkah to Jeddah airport taxi guide | mecca to jeddah airport | 480 |
+
+Notes:
+- "Umrah ziyarat" has no volume in the earlier pull. Treat that post as a planning and content piece until the volume is checked.
+- The Masjid Quba and Uhud figures are cluster totals across spelling variants, so they overstate what a single post will get.

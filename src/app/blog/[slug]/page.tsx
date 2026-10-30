@@ -27,7 +27,13 @@ async function getPost(params: Props["params"]): Promise<BlogPost> {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(params);
-  return pageMetadata({ title: post.title, description: post.description, path: `/blog/${post.slug}` });
+  return pageMetadata({
+    title: post.title,
+    description: post.description,
+    path: `/blog/${post.slug}`,
+    keywords: post.keywords,
+    article: { publishedAt: post.publishedAt, modifiedAt: post.updatedAt },
+  });
 }
 
 function formatDate(iso: string): string {
