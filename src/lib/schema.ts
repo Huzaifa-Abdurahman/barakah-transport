@@ -99,7 +99,15 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
 // AggregateRating is deliberately not emitted. It is only added once real,
 // verifiable review data exists (self-serving ratings break Google's guidelines).
 
-export function articleSchema(post: { slug: string; title: string; description: string; publishedAt: string; updatedAt: string }) {
+export function articleSchema(post: {
+  slug: string;
+  title: string;
+  description: string;
+  publishedAt: string;
+  updatedAt: string;
+  lang?: string;
+  image?: string;
+}) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -109,7 +117,8 @@ export function articleSchema(post: { slug: string; title: string; description: 
     mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
-    image: absoluteUrl("/og-default.jpg"),
+    image: absoluteUrl(post.image ?? "/og-default.jpg"),
+    inLanguage: post.lang ?? "en",
     author: { "@type": "Organization", name: BUSINESS.name, "@id": ORG_ID },
     publisher: { "@id": ORG_ID },
   };

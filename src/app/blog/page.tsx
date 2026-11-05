@@ -45,7 +45,10 @@ export default function BlogIndexPage() {
                   href={`/blog/${post.slug}`}
                   className="group flex h-full flex-col bg-white rounded-2xl p-6 border border-slate-200 hover:border-[var(--yellow-main)] hover:shadow-[0_10px_30px_rgba(212,175,55,0.2)] transition-all duration-300"
                 >
-                  <span className="text-xs font-black uppercase tracking-widest text-[var(--yellow-main)]">{post.category}</span>
+                  <span className="text-xs font-black uppercase tracking-widest text-[var(--yellow-main)]">
+                    {post.category}
+                    {post.lang === "id" && " · Bahasa Indonesia"}
+                  </span>
                   <h2 className="text-xl font-black text-slate-900 mt-3 mb-3 leading-snug">{post.title}</h2>
                   <p className="text-slate-600 text-sm leading-relaxed flex-1">{post.description}</p>
                   <div className="mt-5 flex items-center justify-between text-sm font-bold text-slate-500">

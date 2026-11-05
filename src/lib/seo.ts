@@ -10,10 +10,11 @@ interface PageMetaInput {
   image?: string;
   keywords?: string[]; // meta keywords; Google ignores them, other tools read them
   article?: { publishedAt: string; modifiedAt: string }; // sets article Open Graph type and dates
+  locale?: string; // Open Graph locale, e.g. "id_ID" for Indonesian pages
 }
 
 // Every page gets its own canonical and og:url, built from SITE_URL.
-export function pageMetadata({ title, description, path, image = "/og-default.jpg", keywords, article }: PageMetaInput): Metadata {
+export function pageMetadata({ title, description, path, image = "/og-default.jpg", keywords, article, locale = "en_US" }: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
   const ogTitle = `${title} | ${BUSINESS.name}`;
   const ogImages = [{ url: absoluteUrl(image), width: 1200, height: 630, alt: `${title}, ${BUSINESS.name}` }];
@@ -21,7 +22,7 @@ export function pageMetadata({ title, description, path, image = "/og-default.jp
   const openGraph: NonNullable<Metadata["openGraph"]> = article
     ? {
         type: "article",
-        locale: "en_US",
+        locale,
         url,
         title: ogTitle,
         description,
@@ -33,7 +34,7 @@ export function pageMetadata({ title, description, path, image = "/og-default.jp
       }
     : {
         type: "website",
-        locale: "en_US",
+        locale,
         url,
         title: ogTitle,
         description,

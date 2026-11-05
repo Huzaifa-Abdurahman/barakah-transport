@@ -5,6 +5,7 @@
 
 import { ZIYARAT_POSTS } from "./blog-ziyarat";
 import { TRANSPORT_POSTS } from "./blog-transport";
+import { INDONESIAN_POSTS } from "./blog-id";
 
 export interface BlogSection {
   heading: string;
@@ -25,6 +26,12 @@ export interface BlogPost {
   relatedRoute: string; // slug of a route or ziyarat page in data/routes.ts
   intro: string;
   sections: BlogSection[];
+  lang?: "en" | "id"; // content language; defaults to English
+  image?: string; // hero and social image, under /public/blog
+  imageAlt?: string;
+  imageCredit?: string; // required for licensed images, e.g. Unsplash photographer
+  summary?: string; // answer-first summary shown above the article for readers and AI search
+  faqs?: { q: string; a: string }[]; // visible FAQ and FAQPage structured data
 }
 
 const CORE_POSTS: BlogPost[] = [
@@ -380,6 +387,6 @@ const CORE_POSTS: BlogPost[] = [
 ];
 
 // Posts are kept in separate files by topic. Add new posts there, not here.
-export const BLOG_POSTS: BlogPost[] = [...CORE_POSTS, ...ZIYARAT_POSTS, ...TRANSPORT_POSTS];
+export const BLOG_POSTS: BlogPost[] = [...CORE_POSTS, ...ZIYARAT_POSTS, ...TRANSPORT_POSTS, ...INDONESIAN_POSTS];
 
 export const BLOG_BY_SLUG: Record<string, BlogPost> = Object.fromEntries(BLOG_POSTS.map((p) => [p.slug, p]));

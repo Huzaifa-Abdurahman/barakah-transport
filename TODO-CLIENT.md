@@ -94,3 +94,13 @@ Each of these answers commits the business to a policy. Confirm or change it:
 - [ ] **GA4 measurement ID** (`NEXT_PUBLIC_GA_ID`): analytics and conversion events are not wired yet.
 - [ ] **Guides and blog** (`/guides`): not built. Eight draft outlines are still to be written.
 - [ ] **Google Business Profile**: create or claim it (category: Taxi service) and use the same name, phone and address as `BUSINESS`.
+
+## 10. Indonesian blog posts and taxi service pages (added 5 Nov 2026)
+
+- [ ] **Payment policy:** the posts say "drop first, then payment" as stated by the owner. Confirm the exact wording, which payment methods are accepted, and whether any deposit applies.
+- [ ] **Terms summary** (`src/data/blog-id.ts`, article "Syarat dan Ketentuan"): this is a summary only. Replace the cancellation and change wording with the approved policy, and have it reviewed by a qualified professional.
+- [ ] **Service definitions:** confirm what VIP, shared, private and personal-driver each include (vehicle types, seats, meet and greet, waiting time).
+- [ ] **Fares:** no Indonesian-audience prices are published. Send the fixed fares per service type, if you want them shown.
+- [ ] **Native review:** the ten Indonesian posts were drafted without a native speaker review. Have a native Indonesian speaker read them before paid promotion.
+- [ ] **Image credits:** the Unsplash photos are credited on each post (Syawish Rehman, Elimende Inagella, K Munggaran, Yasser Mutwakil, Juned Khatri). The other images are the company's own photos.
+- [ ] **Shalawat bus:** the posts say the government shalawat bus is for hajj pilgrims. Confirm whether your umrah customers can use it, and update the text if they can.
