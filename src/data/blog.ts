@@ -6,6 +6,7 @@
 import { ZIYARAT_POSTS } from "./blog-ziyarat";
 import { TRANSPORT_POSTS } from "./blog-transport";
 import { INDONESIAN_POSTS } from "./blog-id";
+import { INDONESIAN_POSTS_2 } from "./blog-id-2";
 
 export interface BlogSection {
   heading: string;
@@ -387,6 +388,6 @@ const CORE_POSTS: BlogPost[] = [
 ];
 
 // Posts are kept in separate files by topic. Add new posts there, not here.
-export const BLOG_POSTS: BlogPost[] = [...CORE_POSTS, ...ZIYARAT_POSTS, ...TRANSPORT_POSTS, ...INDONESIAN_POSTS];
+export const BLOG_POSTS: BlogPost[] = [...CORE_POSTS, ...ZIYARAT_POSTS, ...TRANSPORT_POSTS, ...INDONESIAN_POSTS, ...INDONESIAN_POSTS_2];
 
 export const BLOG_BY_SLUG: Record<string, BlogPost> = Object.fromEntries(BLOG_POSTS.map((p) => [p.slug, p]));
