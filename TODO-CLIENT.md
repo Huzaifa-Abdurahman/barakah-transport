@@ -104,3 +104,10 @@ Each of these answers commits the business to a policy. Confirm or change it:
 - [ ] **Native review:** the ten Indonesian posts were drafted without a native speaker review. Have a native Indonesian speaker read them before paid promotion.
 - [ ] **Image credits:** the Unsplash photos are credited on each post (Syawish Rehman, Elimende Inagella, K Munggaran, Yasser Mutwakil, Juned Khatri). The other images are the company's own photos.
 - [ ] **Shalawat bus:** the posts say the government shalawat bus is for hajj pilgrims. Confirm whether your umrah customers can use it, and update the text if they can.
+
+## 11. Arabic blog posts (added 9 Nov 2026)
+
+- [ ] **Arabic-speaking drivers:** the posts say drivers speak Arabic when the client asks for it. Confirm this is true for the fleet, and say which drivers and how many.
+- [ ] **Language and price:** the post says the price is not based on language. Confirm this.
+- [ ] **Personal VIP trips:** confirm what the VIP package includes (water, charger, Wi-Fi, waiting time), and whether pricing is per vehicle.
+- [ ] **Native review:** a native Arabic speaker should review both posts before paid promotion.

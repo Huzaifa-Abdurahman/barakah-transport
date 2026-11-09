@@ -33,13 +33,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/blog/${post.slug}`,
     keywords: post.keywords,
     image: post.image,
-    locale: post.lang === "id" ? "id_ID" : "en_US",
+    locale: post.lang === "id" ? "id_ID" : post.lang === "ar" ? "ar_SA" : "en_US",
     article: { publishedAt: post.publishedAt, modifiedAt: post.updatedAt },
   });
 }
 
 function formatDate(iso: string, locale: string): string {
-  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale === "id" ? "id-ID" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  const tag = locale === "id" ? "id-ID" : locale === "ar" ? "ar-SA" : "en-GB";
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(tag, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -52,14 +53,19 @@ export default async function BlogPostPage({ params }: Props) {
     { name: post.title, href: `/blog/${post.slug}` },
   ];
   const isId = post.lang === "id";
+  const isAr = post.lang === "ar";
   const waHref = whatsappLink(
-    isId
-      ? `Assalamu alaikum, saya membaca artikel "${post.title}" dan ingin bertanya tentang pemesanan (dari website)`
-      : `Assalamu alaikum, I read your guide "${post.title}" and would like to ask about a booking (from website)`,
+    isAr
+      ? `السلام عليكم، قرأت مقال "${post.title}" وأرغب في الاستفسار عن الحجز (من الموقع)`
+      : isId
+        ? `Assalamu alaikum, saya membaca artikel "${post.title}" dan ingin bertanya tentang pemesanan (dari website)`
+        : `Assalamu alaikum, I read your guide "${post.title}" and would like to ask about a booking (from website)`,
   );
-  const L = isId
-    ? { updated: "Diperbarui", minRead: "menit baca", summary: "Ringkasan", faq: "Pertanyaan yang sering diajukan", ask: "Tanya di WhatsApp", book: "Pesan online", bookTitle: "Pesan perjalanan ini bersama Barakah", more: "Artikel lainnya", credit: "Foto" }
-    : { updated: "Updated", minRead: "min read", summary: "Quick answer", faq: "Frequently asked questions", ask: "Ask on WhatsApp", book: "Book online", bookTitle: "Book this trip with Barakah", more: "More guides", credit: "Photo" };
+  const L = isAr
+    ? { updated: "آخر تحديث", minRead: "دقائق للقراءة", summary: "الخلاصة", faq: "الأسئلة الشائعة", ask: "تواصل عبر واتساب", book: "احجز أونلاين", bookTitle: "احجز هذه الرحلة مع بركة", more: "مقالات أخرى", credit: "الصورة" }
+    : isId
+      ? { updated: "Diperbarui", minRead: "menit baca", summary: "Ringkasan", faq: "Pertanyaan yang sering diajukan", ask: "Tanya di WhatsApp", book: "Pesan online", bookTitle: "Pesan perjalanan ini bersama Barakah", more: "Artikel lainnya", credit: "Foto" }
+      : { updated: "Updated", minRead: "min read", summary: "Quick answer", faq: "Frequently asked questions", ask: "Ask on WhatsApp", book: "Book online", bookTitle: "Book this trip with Barakah", more: "More guides", credit: "Photo" };
 
   return (
     <>
@@ -69,7 +75,7 @@ export default async function BlogPostPage({ params }: Props) {
       <Breadcrumbs items={crumbs} />
 
       <main className="bg-slate-50 pb-24">
-        <article lang={post.lang ?? "en"} className="max-w-3xl mx-auto px-4 sm:px-6 pt-8">
+        <article lang={post.lang ?? "en"} dir={isAr ? "rtl" : "ltr"} className="max-w-3xl mx-auto px-4 sm:px-6 pt-8">
           <header className="mb-10">
             <span className="text-xs font-black uppercase tracking-widest text-[var(--yellow-main)]">{post.category}</span>
             <h1 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight mt-3 mb-4">{post.title}</h1>

@@ -48,8 +48,9 @@ export default function BlogIndexPage() {
                   <span className="text-xs font-black uppercase tracking-widest text-[var(--yellow-main)]">
                     {post.category}
                     {post.lang === "id" && " · Bahasa Indonesia"}
+                    {post.lang === "ar" && " · العربية"}
                   </span>
-                  <h2 className="text-xl font-black text-slate-900 mt-3 mb-3 leading-snug">{post.title}</h2>
+                  <h2 dir={post.lang === "ar" ? "rtl" : undefined} className="text-xl font-black text-slate-900 mt-3 mb-3 leading-snug">{post.title}</h2>
                   <p className="text-slate-600 text-sm leading-relaxed flex-1">{post.description}</p>
                   <div className="mt-5 flex items-center justify-between text-sm font-bold text-slate-500">
                     <span className="inline-flex items-center gap-1">
