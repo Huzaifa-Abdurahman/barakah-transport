@@ -27,4 +27,5 @@ export const PAGE_UPDATED = {
   privacy: "2026-10-21",
   route: "2026-10-21",
   blog: "2026-10-26",
+  landing: "2026-11-15",
 } as const;

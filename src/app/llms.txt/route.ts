@@ -2,6 +2,7 @@ import { BUSINESS } from "@/config/business";
 import { absoluteUrl } from "@/config/site";
 import { ROUTES } from "@/data/routes";
 import { BLOG_POSTS } from "@/data/blog";
+import { LANDING_PAGES } from "@/data/landing";
 
 // llms.txt: a plain-text index for AI assistants (ChatGPT, Claude, Gemini, Grok,
 // Perplexity) that read websites. Generated from the same data as the site, so new
@@ -15,6 +16,9 @@ export function GET() {
     `> Private Umrah and Hajj taxi service in Saudi Arabia, covering Jeddah Airport (JED), Makkah, Madinah and Madinah Airport (MED). Open 24/7. Booking and questions by WhatsApp: +${BUSINESS.whatsapp}.`,
     "",
     "Barakah Transport Service offers private, VIP, shared and personal-driver taxi services. Pickup and drop-off, ziyarat tours and airport transfers are arranged in advance. Fares are agreed before the trip and paid after arrival (drop first, then payment), as set out in the booking confirmation.",
+    "",
+    "## Taxi services by city and need",
+    ...LANDING_PAGES.map((p) => `- [${p.h1}](${absoluteUrl(`/${p.slug}`)}): ${p.description}`),
     "",
     "## Route and ziyarat pages (English)",
     ...ROUTES.map((r) => `- [${r.title}](${absoluteUrl(`/${r.slug}`)}): ${r.metaDescription}`),

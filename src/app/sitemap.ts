@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { ROUTES } from "@/data/routes";
 import { BLOG_POSTS } from "@/data/blog";
+import { LANDING_PAGES } from "@/data/landing";
 import { absoluteUrl, PAGE_UPDATED } from "@/config/site";
 
 // Every entry is a real page on the www host, returning 200 with no redirect.
@@ -26,6 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: r.kind === "route" ? 0.8 : 0.7,
   }));
 
+  const landingPages = LANDING_PAGES.map((p) => ({
+    path: `/${p.slug}`,
+    updated: PAGE_UPDATED.landing,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   const blogPages = BLOG_POSTS.map((p) => ({
     path: `/blog/${p.slug}`,
     updated: p.updatedAt,
@@ -33,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...routePages, ...blogPages].map((p) => ({
+  return [...staticPages, ...routePages, ...landingPages, ...blogPages].map((p) => ({
     url: absoluteUrl(p.path),
     lastModified: new Date(p.updated),
     changeFrequency: p.changeFrequency,
