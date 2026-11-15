@@ -138,3 +138,29 @@ What the search results showed:
 - Budget results compare shared and private rides by total fare. The per-person comparison is the angle we use, without invented numbers.
 
 Next step: measure "vip taxi makkah", "cheap taxi makkah" and "taxi price makkah" once the keyword tools are connected again, and update the page copy if the volumes change the priorities. Search Console's Performance report will show real queries once the pages are indexed.
+
+## 8. Arabic and Indonesian landing pages (15 Nov 2026)
+
+Arabic volumes come from the October 2026 pull. Indonesian volumes were not measured: the keyword API returned HTTP 402 for Indonesia, so the Indonesian page targets are chosen from search results and marked as unmeasured.
+
+| Page | Primary keyword | Monthly searches | Competition | Notes |
+| --- | --- | --- | --- | --- |
+| /ar/taxi-makkah | تاكسي مكة | 590 | 0.21 (low), CPC 1.14 | Also: تاكسي مكة المكرمة, مشاوير مكة (110, competition 0.31). |
+| /ar/taxi-madinah | تاكسي المدينة المنورة | 210 | 0.56 (medium), CPC 1.19 | Also: تاكسي المدينة (40). |
+| /ar/umrah-transport | نقل معتمرين | 260 | 0.04 (very low), CPC 0.46 | Lowest competition term in the Arabic set. |
+| /ar/vip-taxi-makkah | تاكسي VIP مكة | not measured | not measured | |
+| /ar/taxi-price-makkah | أسعار تاكسي مكة | not measured | not measured | |
+| /id/taksi-makkah | taksi makkah | not measured | not measured | Indonesian pilgrims often write "umroh", so the umroh spelling is used in titles. |
+| /id/taksi-madinah | taksi madinah | not measured | not measured | |
+| /id/transportasi-umroh | transportasi umroh | not measured | not measured | |
+| /id/taksi-vip-makkah | taksi VIP makkah | not measured | not measured | |
+| /id/taksi-murah-makkah | taksi murah makkah | not measured | not measured | |
+| /id/harga-taksi-makkah | harga taksi makkah | not measured | not measured | |
+
+What the search results showed:
+- Arabic results for تاكسي مكة include the Royal Commission for Makkah City and Holy Sites' public "Makkah Taxi" service, launched on 13 January 2025 and operating around the clock. Some searchers will mean that service, so the Arabic Makkah page says clearly that Barakah is a private booking service and is separate.
+- Uber's Makkah page says that a standard taxi cannot be ordered there, only UberX. Blacklane and Swvl Lux sell private chauffeur rides. These are the competitors for the private and VIP queries.
+- Indonesian results are mostly news and travel guides (NU, Detik, Tirto), with few transport companies publishing prices. The Indonesian pages compete on clear service descriptions rather than on fare claims.
+- توصيل مطار جدة (140 searches a month, CPC 2.32) is not yet covered by an Arabic page. The English Jeddah airport route page covers the intent. An Arabic airport page is the next candidate.
+
+Next step: measure the unmeasured terms once the keyword tools are connected again, then adjust titles and descriptions based on the results.

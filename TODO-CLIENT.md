@@ -121,3 +121,13 @@ Each of these answers commits the business to a policy. Confirm or change it:
 - [ ] **What a quote covers:** the pages list the factors that change the fare (vehicle, route, time, waiting, stops, luggage). Confirm this matches your pricing, and confirm whether tolls, waiting time and night charges are included.
 - [ ] **Officials' advice:** the shared-taxi FAQ mentions that officials advise older pilgrims not to travel alone by taxi. Confirm the wording is accurate for your use.
 - [ ] **Native review:** have an English speaker check the pages for clarity and tone before paid promotion.
+
+## 13. Arabic and Indonesian landing pages (added 15 Nov 2026)
+
+- [ ] **Arabic company name:** the Arabic pages use بركة للنقل in titles and text. Confirm this is the approved Arabic name, or send the correct one.
+- [ ] **Arabic copy review:** a native Saudi Arabic speaker should review /ar/ pages for natural wording and dialect before paid promotion.
+- [ ] **Makkah Taxi description:** the Arabic and Indonesian pages describe the Royal Commission's public Makkah Taxi service as separate from Barakah's private booking. The description is based on public reports. Confirm the wording is accurate.
+- [ ] **Indonesian copy review:** a native Indonesian speaker should check /id/ pages. Confirm the "umroh" spelling choice.
+- [ ] **Arabic-speaking and other-language drivers:** the Arabic and Indonesian pages say the driver's language can be requested and confirmed. Confirm which languages are available.
+- [ ] **Payment and quote wording:** the Arabic and Indonesian pages repeat the drop-first-then-payment policy and the quote factors used on the English pages. Confirm them in all three languages.
+- [ ] **Header and footer language:** the navigation and footer stay in English on every page. The landing pages are marked Arabic or Indonesian, but the site-wide layout is not yet translated. Decide whether to translate the header and footer.

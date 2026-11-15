@@ -11,13 +11,26 @@ interface PageMetaInput {
   keywords?: string[]; // meta keywords; Google ignores them, other tools read them
   article?: { publishedAt: string; modifiedAt: string }; // sets article Open Graph type and dates
   locale?: string; // Open Graph locale, e.g. "id_ID" for Indonesian pages
+  brand?: string; // brand name for the title when it differs from the English default, e.g. Arabic
+  languages?: Record<string, string>; // hreflang alternates, absolute URLs keyed by language
 }
 
 // Every page gets its own canonical and og:url, built from SITE_URL.
-export function pageMetadata({ title, description, path, image = "/og-default.jpg", keywords, article, locale = "en_US" }: PageMetaInput): Metadata {
+export function pageMetadata({
+  title,
+  description,
+  path,
+  image = "/og-default.jpg",
+  keywords,
+  article,
+  locale = "en_US",
+  brand,
+  languages,
+}: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
-  const ogTitle = `${title} | ${BUSINESS.name}`;
-  const ogImages = [{ url: absoluteUrl(image), width: 1200, height: 630, alt: `${title}, ${BUSINESS.name}` }];
+  const siteName = brand ?? BUSINESS.name;
+  const ogTitle = `${title} | ${siteName}`;
+  const ogImages = [{ url: absoluteUrl(image), width: 1200, height: 630, alt: `${title}, ${siteName}` }];
 
   const openGraph: NonNullable<Metadata["openGraph"]> = article
     ? {
@@ -43,10 +56,11 @@ export function pageMetadata({ title, description, path, image = "/og-default.jp
       };
 
   return {
-    title,
+    // With an explicit brand, the full title is set as absolute so the root title template is skipped.
+    title: brand ? { absolute: ogTitle } : title,
     description,
     keywords,
-    alternates: { canonical: url },
+    alternates: { canonical: url, ...(languages ? { languages } : {}) },
     openGraph,
     twitter: {
       card: "summary_large_image",

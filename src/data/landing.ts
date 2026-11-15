@@ -4,6 +4,12 @@
 // (24/7 service, airports, fleet seats) or from the owner's confirmed statements.
 // Keyword volumes come from the October 2026 pull; "not measured" means no data yet.
 
+import { absoluteUrl } from "@/config/site";
+import { AR_LANDING_PAGES } from "./landing-ar";
+import { ID_LANDING_PAGES } from "./landing-id";
+
+export type LandingLang = "en" | "ar" | "id";
+
 export interface LandingSection {
   heading: string;
   paragraphs?: string[];
@@ -11,7 +17,9 @@ export interface LandingSection {
 }
 
 export interface LandingPage {
-  slug: string; // URL path without the leading slash
+  slug: string; // URL path without the leading slash, e.g. "ar/taxi-makkah"
+  lang: LandingLang;
+  group: string; // the same value for every language version of one page, e.g. "taxi-makkah"
   title: string; // short page title; the layout adds "| Barakah Transport Service"
   description: string; // 150–160 characters
   h1: string;
@@ -28,7 +36,9 @@ export interface LandingPage {
   whatsappText: string;
 }
 
-export const LANDING_PAGES: LandingPage[] = [
+type LandingDraft = Omit<LandingPage, "lang" | "group">;
+
+const ENGLISH_DRAFTS: LandingDraft[] = [
   {
     slug: "taxi-makkah",
     title: "Taxi Makkah: Private, VIP and Shared",
@@ -371,4 +381,24 @@ export const LANDING_PAGES: LandingPage[] = [
   },
 ];
 
+const withLang = (lang: LandingLang) => (p: LandingDraft): LandingPage => ({ ...p, lang, group: p.slug });
+
+// Every landing page in every language. English slugs are the group name; Arabic and
+// Indonesian files set their own group so the language versions link to each other.
+export const LANDING_PAGES: LandingPage[] = [
+  ...ENGLISH_DRAFTS.map(withLang("en")),
+  ...AR_LANDING_PAGES,
+  ...ID_LANDING_PAGES,
+];
+
 export const LANDING_BY_SLUG: Record<string, LandingPage> = Object.fromEntries(LANDING_PAGES.map((p) => [p.slug, p]));
+
+// hreflang alternates for one page: every language version, plus x-default pointing at English.
+export function landingAlternates(page: LandingPage): Record<string, string> {
+  const versions = LANDING_PAGES.filter((p) => p.group === page.group);
+  const languages: Record<string, string> = {};
+  for (const p of versions) languages[p.lang] = absoluteUrl(`/${p.slug}`);
+  const en = versions.find((p) => p.lang === "en");
+  if (en) languages["x-default"] = absoluteUrl(`/${en.slug}`);
+  return languages;
+}

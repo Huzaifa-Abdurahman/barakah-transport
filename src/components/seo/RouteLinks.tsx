@@ -33,7 +33,7 @@ export default function RouteLinks() {
           Taxi Services by City and Need
         </h3>
         <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {LANDING_PAGES.map((p) => (
+          {LANDING_PAGES.filter((p) => p.lang === "en").map((p) => (
             <li key={p.slug}>
               <Link
                 href={`/${p.slug}`}
