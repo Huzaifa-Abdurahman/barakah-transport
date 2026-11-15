@@ -111,3 +111,13 @@ Each of these answers commits the business to a policy. Confirm or change it:
 - [ ] **Language and price:** the post says the price is not based on language. Confirm this.
 - [ ] **Personal VIP trips:** confirm what the VIP package includes (water, charger, Wi-Fi, waiting time), and whether pricing is per vehicle.
 - [ ] **Native review:** a native Arabic speaker should review both posts before paid promotion.
+
+## 12. Landing pages: taxi Makkah, Madinah, VIP, budget and price (added 15 Nov 2026)
+
+- [ ] **Shared rides:** the pages say shared rides exist, where a seat is free on the route and date. Confirm which routes offer shared seats and how they are sold.
+- [ ] **Arabic-speaking drivers:** the pages ask customers to request one and say we confirm the language before the trip. Confirm how many drivers speak Arabic, and whether this is guaranteed.
+- [ ] **Payment policy:** the pages state "drop first, then payment" as the owner described it. Confirm the wording, the accepted payment methods, and any deposit.
+- [ ] **VIP vehicles:** the pages list the GMC Yukon XL, Mercedes V-Class and Hyundai Staria with the seats from the fleet page. Confirm that these are the vehicles used for VIP trips.
+- [ ] **What a quote covers:** the pages list the factors that change the fare (vehicle, route, time, waiting, stops, luggage). Confirm this matches your pricing, and confirm whether tolls, waiting time and night charges are included.
+- [ ] **Officials' advice:** the shared-taxi FAQ mentions that officials advise older pilgrims not to travel alone by taxi. Confirm the wording is accurate for your use.
+- [ ] **Native review:** have an English speaker check the pages for clarity and tone before paid promotion.

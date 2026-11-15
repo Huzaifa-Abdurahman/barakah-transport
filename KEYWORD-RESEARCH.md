@@ -119,3 +119,22 @@ The keyword API for new queries was unavailable on this date (DataForSEO returne
 Notes:
 - "Umrah ziyarat" has no volume in the earlier pull. Treat that post as a planning and content piece until the volume is checked.
 - The Masjid Quba and Uhud figures are cluster totals across spelling variants, so they overstate what a single post will get.
+
+## 7. Price, VIP and budget landing pages (15 Nov 2026)
+
+The keyword API tools were not connected in this session, so this check used live search results and the volumes measured in October 2026. Volumes for the VIP, budget and price terms were not measured and are marked as such.
+
+| Page | Primary keyword | Volume (Oct 2026 pull) | Difficulty / competition | Notes |
+| --- | --- | --- | --- | --- |
+| /taxi-makkah | makkah taxi | 1,000 / month | KD 9, competition 0.43 | Easiest large term in our research. Related: taxi service in makkah (720), makkah taxi service (720). |
+| /taxi-madinah | madinah taxi | 260 / month | competition 0.61 | Related: taxi madinah (260). "madinah airport taxi" (1,000) stays on the airport page to avoid overlap. |
+| /vip-taxi-makkah | vip taxi makkah | not measured | not measured | SERP: mostly operator sites with few reviews. |
+| /cheap-taxi-makkah | cheap taxi makkah | not measured | not measured | SERP: operator pages with figures that conflict. Page explains cost per person instead of publishing numbers. |
+| /taxi-price-makkah | taxi price makkah | not measured | not measured | Price-intent queries seen in the earlier pull were mostly route-specific (for example taxi cost from jeddah airport to makkah, 1,000) and belong to the route pages. |
+
+What the search results showed:
+- Most price results are operator pages that publish indicative fares and confirm the final figure on WhatsApp. None cites a regulated tariff, and the figures conflict.
+- VIP results are mostly small operators with few reviews, so a clearly written page with concrete vehicle capacities has room to compete.
+- Budget results compare shared and private rides by total fare. The per-person comparison is the angle we use, without invented numbers.
+
+Next step: measure "vip taxi makkah", "cheap taxi makkah" and "taxi price makkah" once the keyword tools are connected again, and update the page copy if the volumes change the priorities. Search Console's Performance report will show real queries once the pages are indexed.
